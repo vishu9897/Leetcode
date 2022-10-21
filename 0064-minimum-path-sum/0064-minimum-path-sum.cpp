@@ -19,7 +19,25 @@ public:
         
     }
     int minPathSum(vector<vector<int>>& grid) {
-    vector<vector<int>> dp(grid.size(),vector<int>(grid[0].size(),-1));
-      return solve(grid,0,0,dp);   
+        vector<vector<int>> dp(grid.size()+1,vector<int>(grid[0].size()+1,0));
+        int n=grid.size();
+        int m=grid[0].size();
+        dp[n-1][m-1]=grid[n-1][m-1];
+        for(int i=n-1;i>=0;i--)
+        {
+            for(int j=m-1;j>=0;j--)
+            {
+                int t1=INT_MAX,t2=INT_MAX;
+                
+                if(i==n-1 && j==m-1) continue;
+                if(i+1<n)
+                t1 = grid[i][j] + dp[i+1][j];
+                if(j+1<m)
+                t2 = grid[i][j] + dp[i][j+1];
+
+                dp[i][j]=min(t1,t2);
+            }
+        }
+        return dp[0][0];   
     }
 };
