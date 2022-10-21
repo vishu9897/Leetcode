@@ -1,14 +1,14 @@
 class Solution {
 public:
-    int solve(vector<int> &coins,int amount,int index,vector<vector<int>> &dp){
+    long long solve(vector<int> &coins,int amount,int index,vector<vector<int>> &dp){
         if(index==0)
         {
             if(amount%coins[0]==0)
             return amount/coins[0];
-            return 1e9;
+            return INT_MAX;
         }
         if(dp[amount][index]!=-1) return dp[amount][index];
-        int take=1e9,ntake;
+        long long take=INT_MAX,ntake;
         if(amount>=coins[index]) take= 1+ solve(coins,amount-coins[index],index,dp);
         ntake=0 +solve(coins,amount,index-1,dp);
         return dp[amount][index]=min(take,ntake);
