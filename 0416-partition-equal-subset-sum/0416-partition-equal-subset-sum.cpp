@@ -17,7 +17,21 @@ public:
         int sum=0;
         for(auto x:nums) sum+=x;
         if(sum%2!=0) return false;
-        vector<vector<int>> dp(sum/2+1,vector<int>(nums.size(),-1));
-        return solve(nums,sum/2,nums.size()-1,dp);
+        int target=sum/2;
+        vector<vector<bool>> dp(nums.size()+1,vector<bool>(target+1,false));
+        for(int i=0;i<nums.size();i++)
+             dp[i][0]=true;
+        if(nums[0]<=target) dp[0][nums[0]]=true;
+        for(int i=1;i<nums.size();i++)
+        {
+            for(int j=0;j<=target;j++)
+            {
+                bool take=false,ntake;
+                if(j>= nums[i]) take=dp[i-1][j-nums[i]];
+                ntake=dp[i-1][j];
+                dp[i][j]=take | ntake;
+            }
+        }
+        return dp[nums.size()-1][target];
     }
 };
