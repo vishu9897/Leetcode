@@ -1,27 +1,27 @@
 class Solution {
-private:
-    int fun(string &a, string &b){
-        int k = 0;
-        for(int i=0; i<a.size(); i++){
-            if(a[i]!=b[i])  k++;
-        }
-        return k;
-    }
 public:
-    vector<string> twoEditWords(vector<string>& q, vector<string>& d) {
-        int n = q.size(), m = d.size();
-        vector<string> ans;
-        for(int i=0; i<n; i++){
-            string a = q[i];
-            for(int j=0; j<m; j++){
-                string b = d[j];
-                int check = fun(a, b);
-                if(check<=2){
-                    ans.push_back(a);
-                    break;
+    vector<string> twoEditWords(vector<string>& queries, vector<string>& dictionary) {
+        vector<string> res;
+        int n=queries.size();
+        int m=dictionary.size();
+        int t=queries[0].size();
+        for(int i=0;i<n;i++)
+        {
+            string tmp1=queries[i];
+            for(int j=0;j<m;j++)
+            {
+                int count=0;
+                string tmp2=dictionary[j];
+                for(int k=0;k<t;k++)
+                {
+                    if(tmp1[k]!=tmp2[k]) count++;
                 }
+                if(count<=2){
+                    res.push_back(tmp1);
+                    break;
+                }  
             }
         }
-        return ans;
+        return res;
     }
 };
