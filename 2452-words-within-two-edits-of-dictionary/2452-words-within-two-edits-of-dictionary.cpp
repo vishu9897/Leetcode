@@ -1,27 +1,34 @@
 class Solution {
 public:
-    vector<string> twoEditWords(vector<string>& queries, vector<string>& dictionary) {
-        vector<string> res;
-        int n=queries.size();
-        int m=dictionary.size();
-        int t=queries[0].size();
-        for(int i=0;i<n;i++)
-        {
-            string tmp1=queries[i];
-            for(int j=0;j<m;j++)
-            {
-                int count=0;
-                string tmp2=dictionary[j];
-                for(int k=0;k<t;k++)
-                {
-                    if(tmp1[k]!=tmp2[k]) count++;
-                }
-                if(count<=2){
-                    res.push_back(tmp1);
-                    break;
-                }  
-            }
+    struct Trie{
+    Trie* ch[26] = {};
+    void insert(string &s, int i = 0) {
+        if (i < s.size()) {
+            if (ch[s[i] - 'a'] == nullptr)
+                ch[s[i] - 'a'] = new Trie();
+            ch[s[i] - 'a']->insert(s, i + 1);
         }
+    }
+    bool match(string &s, int cnt, int i = 0) {
+        if (cnt < 0 || i == s.size())
+            return cnt >= 0;
+        bool res = false;
+        for (int j = 0; j < 26; ++j)
+            if (ch[j] != nullptr)
+                res |= ch[j]->match(s, cnt - (j != s[i] - 'a'), i + 1);
         return res;
     }
+};
+vector<string> twoEditWords(vector<string>& queries, vector<string>& dict) {
+    vector<string> res;
+    Trie t;
+    for (auto &d : dict)
+        t.insert(d);
+    for (auto &q : queries) {
+        if (t.match(q, 2))
+            res.push_back(q);
+    }
+    return res;
+}
+
 };
