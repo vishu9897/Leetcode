@@ -43,12 +43,13 @@ public:
         int mini=INT_MAX;
         for(int k=start;k<=end;k++)
         {
-            int cases=INT_MAX;
+            // int cases=INT_MAX;
             if(isPalindrome(str,start,k))
             {
-                cases= 1 + solve(str,k+1,end,dp);
+                int cases= 1 + solve(str,k+1,end,dp);
+                mini=min(cases,mini);
             }
-             mini=min(cases,mini);
+             
         }
         return dp[start]=mini;
     }
