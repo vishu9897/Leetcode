@@ -1,17 +1,20 @@
 class Solution {
 public:
-    int sumDigits(long long n) {
-    int res = 0;
-    for (; n; n /= 10)
-        res += n % 10;
-    return res;
-}
-long long makeIntegerBeautiful(long long n, int target) {
-    long long res = 0;
-    for (long long mul = 1; sumDigits(n) > target; mul *= 10) {
-        res += mul * (10 - n % 10);
-        n = n / 10 + 1;
+   int sum(long long n) {
+        int res = 0;
+        while (n) {
+            res += n % 10;
+            n /= 10;
+        }
+        return res;
     }
-    return res;
-}
+
+    long long makeIntegerBeautiful(long long n, int target) {
+        long long n0 = n, base = 1;
+        while (sum(n) > target) {
+            n = n / 10 + 1;
+            base *= 10;
+        }
+        return n * base - n0;
+    }
 };
