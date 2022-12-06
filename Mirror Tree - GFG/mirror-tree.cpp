@@ -110,20 +110,21 @@ struct Node
 class Solution {
   public:
     // Function to convert a binary tree into its mirror tree.
-    Node* solve(Node* node)
-    {
-        if(node==NULL) return NULL;
-        else
-        {
-            Node* left=solve(node->left);
-            Node* right=solve(node->right);
-            node->left=right;
-            node->right=left;
-            return node;
-        }
-    }
+    // Node* solve(Node* node)
+    // {
+        
+    // }
     void mirror(Node* node) {
-        solve(node);
+        // if(node==NULL) return NULL;
+        if(node!=NULL)
+        {
+            mirror(node->left);
+            mirror(node->right);
+            Node* temp= node->left;
+            node->left=node->right;
+            node->right=temp;
+            // return node;
+        }
     }
 };
 
