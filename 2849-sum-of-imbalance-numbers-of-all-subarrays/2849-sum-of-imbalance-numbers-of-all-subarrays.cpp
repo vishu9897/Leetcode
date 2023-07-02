@@ -1,16 +1,17 @@
 class Solution {
 public:
-    int sumImbalanceNumbers(vector<int>& A) {
+        int sumImbalanceNumbers(vector<int>& A) {
         int res = 0, n = A.size();
-        for (int i = 0; i < n; ++i) {
-            unordered_set<int> s = {A[i]};
-            int cur = 0;
-            for (int j = i + 1; j < n; ++j) {
-                cur += s.count(A[j]) ? 0 : 1 - s.count(A[j] + 1) - s.count(A[j] - 1);
-                s.insert(A[j]);
-                res += cur;
-            }
+        vector<int> left(n), seen(n + 10, -1);
+        for (int i = 0; i < n; i++) {
+            left[i] = max(seen[A[i] + 1], seen[A[i]]);
+            seen[A[i]] = i;
         }
-        return res;
+        seen.assign(n + 10, n);
+        for (int i = n - 1; i >= 0; i--) {
+            seen[A[i]] = i;
+            res += (i - left[i]) * (seen[A[i] + 1] - i);
+        }
+        return res - n * (n + 1) / 2;
     }
 };
