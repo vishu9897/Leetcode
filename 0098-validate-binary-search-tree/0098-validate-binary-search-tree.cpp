@@ -11,20 +11,14 @@
  */
 class Solution {
 public:
-    void preOrder(TreeNode* root,vector<int> &res)
+    bool solve(TreeNode* root,long long mini,long long maxi)
     {
-        if(root==NULL) return;
-        preOrder(root->left,res);
-        res.push_back(root->val);
-        preOrder(root->right,res);
+        if(root==NULL) return true;
+        if(root->val <= mini || root->val >= maxi) return false;
+        return (solve(root->left,mini,root->val) && solve(root->right,root->val,maxi));
+
     }
     bool isValidBST(TreeNode* root) {
-        vector<int> res;
-        preOrder(root,res);
-        for(int i=1;i<res.size();i++)
-        {
-            if(res[i-1] >= res[i]) return false;
-        }
-        return true;
+        return solve(root,LONG_MIN,LONG_MAX);
     }
 };
