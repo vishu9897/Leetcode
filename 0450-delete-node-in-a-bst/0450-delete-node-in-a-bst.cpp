@@ -11,42 +11,48 @@
  */
 class Solution {
 public:
-    int mini(TreeNode* root)
+    int maxVal(TreeNode* root)
     {
-        if(root->left)
+        if(root->right)
         {
-            return mini(root->left);
+            return maxVal(root->right);
         }
         return root->val;
-    }
-    TreeNode* deleteBST(TreeNode* root,int key)
+
+    };
+    TreeNode* deleteFromBst(TreeNode *root,int key)
     {
         if(root==NULL) return NULL;
         if(root->val==key)
         {
             if(root->left==NULL && root->right==NULL) return NULL;
-            if(root->left!=NULL && root->right==NULL) return root->left;
-            if(root->left==NULL && root->right!=NULL) return root->right;
-            if(root->left && root->right)
+            if(root->left && root->right==NULL)
             {
-                int valu=mini(root->right);
-                root->val=valu;
-                root->right= deleteBST(root->right,valu);
+                return root->left;
+            }
+            else if(root->left==NULL &&  root->right)
+            {
+                return root->right;
+            }
+            int valu=maxVal(root->left);
+            root->val=valu;
+            root->left=deleteFromBst(root->left,valu);
+            return root;  
+        }
+        else {
+            if(root->val < key)
+            {
+                root->right=deleteNode(root->right,key);
+               return root; 
+            }   
+            else
+            {
+                root->left=deleteNode(root->left,key);
                 return root;
             }
-            
         }
-        if(root->val > key)
-        {
-        root->left=deleteBST(root->left,key);
-            return root;
-        }
-        if(root->val < key)
-            root->right=deleteBST(root->right,key);
-        return root;
     }
     TreeNode* deleteNode(TreeNode* root, int key) {
-        return deleteBST(root,key); 
-        
+        return deleteFromBst(root,key);
     }
 };
