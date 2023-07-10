@@ -36,7 +36,6 @@ public:
             }
             dp[i]=mini;
         }
-        long long ans=dp[s.size()-1];
-        return ans>=INT_MAX ? -1 : ans ;
+        return dp[s.size()-1]>=INT_MAX ? -1 : dp[s.size()-1] ;
     }
 };
