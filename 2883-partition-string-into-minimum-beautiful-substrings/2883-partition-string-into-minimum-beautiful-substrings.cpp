@@ -21,7 +21,6 @@ public:
     }
     int minimumBeautifulSubstrings(string s) {
         vector<int> dp(s.size()+4,0);
-        // if(s[0]==1) dp[0]=1;
         for(int i=0;i<s.size();i++){
             long long mini=INT_MAX;
             for(int j=s.size()-1;j>=0;j--){
@@ -31,24 +30,13 @@ public:
                     if(j!=0)
                     cases= (long long) 1 + dp[j-1];
                     else
-                    cases= (long long)1 ;
+                    cases= 1 ;
                     mini=min(mini,cases);
-                    // cout<<i<<" "<<j<<" dp ";
-                    // for(int i=0;i<s.size()+2;i++)
-                    // {
-                    //     cout<<dp[i]<<" ";
-                    // }
-                    // cout<<endl;
                 }
             }
             dp[i]=mini;
         }
-        // for(int i=0;i<s.size()+2;i++)
-        // {
-        //     cout<<dp[i]<<" ";
-        // }
         long long ans=dp[s.size()-1];
-        // return 0;
         return ans>=INT_MAX ? -1 : ans ;
     }
 };
