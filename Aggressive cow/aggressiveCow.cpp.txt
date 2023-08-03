@@ -1,0 +1,29 @@
+#include<bits/stdc++.h>
+int aggressiveCows(vector<int> &stalls, int k)
+{
+    sort(stalls.begin(),stalls.end());
+    int n=stalls.size(),ans=INT_MIN;
+    int low=0,high= (stalls[n-1] - stalls[0])/(k-1);
+    while(low<=high)
+    {
+        int mid = low + (high-low)/2;
+        int cow=1,back=0;
+        for(int i=1;i<n;i++)
+        {
+            if(stalls[i]-stalls[back] >= mid)
+            {
+                back=i;
+                cow++;
+            }
+
+        }
+        if(cow>=k)
+        {
+            ans=max(mid,ans);
+            low=mid+1;
+        }
+        else high=mid-1;
+    }
+    return ans;
+    
+}
