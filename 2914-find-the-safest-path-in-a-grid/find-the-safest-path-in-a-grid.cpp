@@ -69,13 +69,7 @@ public:
             {
                  high=mid-1;
             }
-            for(int i=0;i<vis.size();i++)
-            {
-                for(int j=0;j<vis[0].size();j++)
-                {
-                    vis[i][j]=0;
-                }
-            }
+            for (int i = 0; i < vis.size(); i++) fill(vis[i].begin(), vis[i].end(), 0);
         }
         return high==-1 ? 0 : high;
         
