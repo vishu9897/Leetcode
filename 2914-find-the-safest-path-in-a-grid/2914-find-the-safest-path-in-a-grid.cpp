@@ -94,7 +94,7 @@ public:
             // cout<<"NO "<<mid<<endl;
         }
         // cout<<low<<" "<<high<<endl;
-        return ans;
+        return high==-1 ? 0 : high;
         
     }
 };
