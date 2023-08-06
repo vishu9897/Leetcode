@@ -1,4 +1,4 @@
-<h2><a href="https://leetcode.com/problems/find-the-safest-path-in-a-grid">2914. Find the Safest Path in a Grid</a></h2><h3>Medium</h3><hr><p>You are given a <strong>0-indexed</strong> 2D matrix <code>grid</code> of size <code>n x n</code>, where <code>(r, c)</code> represents:</p>
+<h2><a href="https://leetcode.com/problems/find-the-safest-path-in-a-grid">Find the Safest Path in a Grid</a></h2> <img src='https://img.shields.io/badge/Difficulty-Medium-orange' alt='Difficulty: Medium' /><hr><p>You are given a <strong>0-indexed</strong> 2D matrix <code>grid</code> of size <code>n x n</code>, where <code>(r, c)</code> represents:</p>
 
 <ul>
 	<li>A cell containing a thief if <code>grid[r][c] = 1</code></li>
