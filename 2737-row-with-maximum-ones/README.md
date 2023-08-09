@@ -1,4 +1,4 @@
-<h2><a href="https://leetcode.com/problems/row-with-maximum-ones">Row With Maximum Ones</a></h2> <img src='https://img.shields.io/badge/Difficulty-Easy-brightgreen' alt='Difficulty: Easy' /><hr><p>Given a <code>m x n</code> binary matrix <code>mat</code>, find the <strong>0-indexed</strong> position of the row that contains the <strong>maximum</strong> count of <strong>ones,</strong> and the number of ones in that row.</p>
+<h2><a href="https://leetcode.com/problems/row-with-maximum-ones">2737. Row With Maximum Ones</a></h2><h3>Easy</h3><hr><p>Given a <code>m x n</code> binary matrix <code>mat</code>, find the <strong>0-indexed</strong> position of the row that contains the <strong>maximum</strong> count of <strong>ones,</strong> and the number of ones in that row.</p>
 
 <p>In case there are multiple rows that have the maximum count of ones, the row with the <strong>smallest row number</strong> should be selected.</p>
 
