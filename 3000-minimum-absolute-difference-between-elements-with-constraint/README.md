@@ -1,4 +1,4 @@
-<h2><a href="https://leetcode.com/problems/minimum-absolute-difference-between-elements-with-constraint">3000. Minimum Absolute Difference Between Elements With Constraint</a></h2><h3>Medium</h3><hr><p>You are given a <strong>0-indexed</strong> integer array <code>nums</code> and an integer <code>x</code>.</p>
+<h2><a href="https://leetcode.com/problems/minimum-absolute-difference-between-elements-with-constraint">Minimum Absolute Difference Between Elements With Constraint</a></h2> <img src='https://img.shields.io/badge/Difficulty-Medium-orange' alt='Difficulty: Medium' /><hr><p>You are given a <strong>0-indexed</strong> integer array <code>nums</code> and an integer <code>x</code>.</p>
 
 <p>Find the <strong>minimum absolute difference</strong> between two elements in the array that are at least <code>x</code> indices apart.</p>
 
