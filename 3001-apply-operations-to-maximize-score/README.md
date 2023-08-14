@@ -1,4 +1,4 @@
-<h2><a href="https://leetcode.com/problems/apply-operations-to-maximize-score">Apply Operations to Maximize Score</a></h2> <img src='https://img.shields.io/badge/Difficulty-Hard-red' alt='Difficulty: Hard' /><hr><p>You are given an array <code>nums</code> of <code>n</code> positive integers and an integer <code>k</code>.</p>
+<h2><a href="https://leetcode.com/problems/apply-operations-to-maximize-score">3001. Apply Operations to Maximize Score</a></h2><h3>Hard</h3><hr><p>You are given an array <code>nums</code> of <code>n</code> positive integers and an integer <code>k</code>.</p>
 
 <p>Initially, you start with a score of <code>1</code>. You have to maximize your score by applying the following operation at most <code>k</code> times:</p>
 
