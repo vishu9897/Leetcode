@@ -11,7 +11,7 @@ public:
                 n = n/2;
             }
         }
-    for (int i = 3; i <= sqrt(n); i = i + 2)
+    for (int i = 3; i <= sqrt(n); i=i+2)
     {
         if(n%i==0)
         {
