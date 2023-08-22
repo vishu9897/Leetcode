@@ -1,22 +1,20 @@
 class Solution {
 public:
-        int minimumOperations(vector<int>& A) {
-        int n = A.size(), res = n;
-        for (int i = 0; i <= n; i++) {
-            for (int j = i; j <= n; j++) {
-                int cur = 0;
-                for (int k = 0; k < n; k++) {
-                    if (k < i) {
-                        cur += A[k] != 1;
-                    } else if (k < j) {
-                        cur += A[k] != 2;
-                    } else {
-                        cur += A[k] != 3;
-                    }
+    int minimumOperations(vector<int>& v) {
+        int n=v.size();
+        vector<int>dp(n,1);
+        int m=1;
+        for(int i=1;i<n;i++)
+        {
+            for(int j=i-1;j>=0;j--)
+            {
+                if(v[i]>=v[j])
+                {
+                    dp[i]=max(dp[i],1+dp[j]);
+                    m=max(m,dp[i]);
                 }
-                res = min(res, cur);
             }
         }
-        return res;
+        return n-m;
     }
 };
