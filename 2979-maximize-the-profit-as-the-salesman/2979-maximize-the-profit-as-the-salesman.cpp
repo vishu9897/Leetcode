@@ -7,12 +7,12 @@ public:
         {
             vc[x[1]].push_back(x);
         }
-        for(int i=1;i<=n;i++)
+        for(int i=0;i<n;i++)
         {
-            dp[i]=dp[i-1];
-            for(auto &x: vc[i-1])
+            dp[i+1]=dp[i];
+            for(auto &x: vc[i])
             {
-                dp[i]=max(dp[i],dp[x[0]]+x[2]);
+                dp[i+1]=max(dp[i+1],dp[x[0]]+x[2]);
             }
         }
         return dp[n];
