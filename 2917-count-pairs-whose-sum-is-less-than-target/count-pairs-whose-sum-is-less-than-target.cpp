@@ -1,14 +1,22 @@
 class Solution {
 public:
     int countPairs(vector<int>& nums, int target) {
-        int count=0;
-        for(int i=0;i<nums.size();i++)
-        {
-            for(int j=i+1;j<nums.size();j++)
-            {
-                if(nums[i]+nums[j]<target) count++;
+         sort(begin(nums), end(nums));
+        int lo = 0;
+        int hi = size(nums) - 1;
+        int ans = 0;
+        for(auto x: nums)
+            cout<<x<<" ";
+        cout<<endl;        
+        while (lo < hi) {
+            if (nums[lo] + nums[hi] < target) {
+                cout<<lo<<" "<<hi<<endl;
+                ans += hi - lo;
+                ++lo;
+            } else {
+                --hi;
             }
         }
-        return count;
+        return ans;
     }
 };
