@@ -1,4 +1,4 @@
-<h2><a href="https://leetcode.com/problems/number-of-beautiful-integers-in-the-range">3017. Number of Beautiful Integers in the Range</a></h2><h3>Hard</h3><hr><p>You are given positive integers <code>low</code>, <code>high</code>, and <code>k</code>.</p>
+<h2><a href="https://leetcode.com/problems/number-of-beautiful-integers-in-the-range">Number of Beautiful Integers in the Range</a></h2> <img src='https://img.shields.io/badge/Difficulty-Hard-red' alt='Difficulty: Hard' /><hr><p>You are given positive integers <code>low</code>, <code>high</code>, and <code>k</code>.</p>
 
 <p>A number is <strong>beautiful</strong> if it meets both of the following conditions:</p>
 
