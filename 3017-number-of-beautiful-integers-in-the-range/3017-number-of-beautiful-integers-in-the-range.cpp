@@ -19,7 +19,8 @@ class Solution {
             int newEven = even + ((!zero || i > 0) && i % 2 == 0);
             
             if(zero && i != 0) {
-                ans += gogo(s, newTight, pos + 1, newOdd, newEven, i, false);
+                cout<<sum<<" "<<i<<endl;
+                ans += gogo(s, newTight, pos + 1, newOdd, newEven, i%k, false);
             } else if(!zero) {
                 ans += gogo(s, newTight, pos + 1, newOdd, newEven, (sum * 10 + i) % k, false);
             }
