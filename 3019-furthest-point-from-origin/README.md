@@ -1,4 +1,4 @@
-<h2><a href="https://leetcode.com/problems/furthest-point-from-origin">3019. Furthest Point From Origin</a></h2><h3>Easy</h3><hr><p>You are given a string <code>moves</code> of length <code>n</code> consisting only of characters <code>&#39;L&#39;</code>, <code>&#39;R&#39;</code>, and <code>&#39;_&#39;</code>. The string represents your movement on a number line starting from the origin <code>0</code>.</p>
+<h2><a href="https://leetcode.com/problems/furthest-point-from-origin">Furthest Point From Origin</a></h2> <img src='https://img.shields.io/badge/Difficulty-Easy-brightgreen' alt='Difficulty: Easy' /><hr><p>You are given a string <code>moves</code> of length <code>n</code> consisting only of characters <code>&#39;L&#39;</code>, <code>&#39;R&#39;</code>, and <code>&#39;_&#39;</code>. The string represents your movement on a number line starting from the origin <code>0</code>.</p>
 
 <p>In the <code>i<sup>th</sup></code> move, you can choose one of the following directions:</p>
 
