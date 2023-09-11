@@ -1,4 +1,4 @@
-<h2><a href="https://leetcode.com/problems/check-if-strings-can-be-made-equal-with-operations-ii">2978. Check if Strings Can be Made Equal With Operations II</a></h2><h3>Medium</h3><hr><p>You are given two strings <code>s1</code> and <code>s2</code>, both of length <code>n</code>, consisting of <strong>lowercase</strong> English letters.</p>
+<h2><a href="https://leetcode.com/problems/check-if-strings-can-be-made-equal-with-operations-ii">Check if Strings Can be Made Equal With Operations II</a></h2> <img src='https://img.shields.io/badge/Difficulty-Medium-orange' alt='Difficulty: Medium' /><hr><p>You are given two strings <code>s1</code> and <code>s2</code>, both of length <code>n</code>, consisting of <strong>lowercase</strong> English letters.</p>
 
 <p>You can apply the following operation on <strong>any</strong> of the two strings <strong>any</strong> number of times:</p>
 
