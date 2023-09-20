@@ -6,7 +6,6 @@ public:
         {
             mid=low + (high-low)/2;
             if(nums[mid]==target) return true;
-            cout<<low<<" "<<mid<<" "<<high<<endl;
             if(nums[low]==nums[mid] && nums[mid]==nums[high])
             {
                 low++;
