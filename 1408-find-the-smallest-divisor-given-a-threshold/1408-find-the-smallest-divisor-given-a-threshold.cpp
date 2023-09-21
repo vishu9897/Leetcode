@@ -1,22 +1,25 @@
 class Solution {
 public:
     int smallestDivisor(vector<int>& nums, int threshold) {
-        int low=1,high=INT_MIN,ans;
-        for(auto x:nums) high = max(high,x);
+        int low=1,high=*max_element(nums.begin(),nums.end());
+        cout<<low<<" "<<high<<endl;
         while(low<=high)
         {
-            int mid= low + (high-low)/2;
-            int re=0;
-            for(auto x:nums)
+            int mid= low + (high-low)/2,sum=0;
+            for(int i=0;i<nums.size();i++)
             {
-                re += ceil((double)x/(double)mid);
+                if(mid>=nums[i]) sum++;
+                else sum+=ceil((double)nums[i]/(double)mid);
+
             }
-            if(re<=threshold) {
-                ans= min(ans,mid);
-                high=mid-1;
-            }
+            if(threshold>=sum) high=mid-1;
             else low=mid+1;
+
         }
-        return ans;
+        // for(int i=0;i<nums.size();i++)
+        // {
+
+        // }
+        return low;
     }
 };
