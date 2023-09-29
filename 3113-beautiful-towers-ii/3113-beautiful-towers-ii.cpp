@@ -14,21 +14,18 @@ public:
             stack.push_back(i);
             left[i] = cur;
         }
-        // for(int i=0;i<left.size();i++) cout<<left[i]<<" ";
-        // cout<<endl;
         stack = {n};
         cur = 0;
         for (int i = n - 1; i >= 0; i--) {
             while (stack.size() > 1 && A[stack.back()] > A[i]) {
                 int j = stack.back();
                 stack.pop_back();
-                cur -= 1L * -(j - stack.back()) * A[j];
+                cur -= 1L * (stack.back()-j) * A[j];
             }
-            cur += 1L * -(i - stack.back()) * A[i];
+            cur += 1L * (stack.back() -i) * A[i];
             stack.push_back(i);
             res = max(res, left[i] + cur - A[i]);
         }
-
         return res;
     }
 };
