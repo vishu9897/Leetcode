@@ -11,7 +11,7 @@ public:
             }
         }
 
-        long long num=0,result=0,mod=1e9+7;
+        int  num=0,result=0,mod=1e9+7;
 
         for(int i=0;i<k;i++)
         {
@@ -24,7 +24,7 @@ public:
                     count[bit]--;
                } 
             }
-            result= (result + (long long)(num * num)%mod)%mod;
+            result= (result +  1L * num * num %mod)%mod;
         }
         
         return result;
