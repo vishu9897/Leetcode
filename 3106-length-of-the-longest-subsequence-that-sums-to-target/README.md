@@ -1,4 +1,4 @@
-<h2><a href="https://leetcode.com/problems/length-of-the-longest-subsequence-that-sums-to-target">3106. Length of the Longest Subsequence That Sums to Target</a></h2><h3>Medium</h3><hr><p>You are given a <strong>0-indexed</strong> array of integers <code>nums</code>, and an integer <code>target</code>.</p>
+<h2><a href="https://leetcode.com/problems/length-of-the-longest-subsequence-that-sums-to-target">Length of the Longest Subsequence That Sums to Target</a></h2> <img src='https://img.shields.io/badge/Difficulty-Medium-orange' alt='Difficulty: Medium' /><hr><p>You are given a <strong>0-indexed</strong> array of integers <code>nums</code>, and an integer <code>target</code>.</p>
 
 <p>Return <em>the <strong>length of the longest subsequence</strong> of</em> <code>nums</code> <em>that sums up to</em> <code>target</code>. <em>If no such subsequence exists, return</em> <code>-1</code>.</p>
 
