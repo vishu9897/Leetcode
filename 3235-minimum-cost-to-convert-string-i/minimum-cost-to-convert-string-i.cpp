@@ -1,6 +1,6 @@
 class Solution {
 public:
-    long long getCost(vector<vector<pair<char,int>>>&g, int start, int end)
+    long long getCost(vector<vector<pair<int,int>>>&g, int start, int end)
     {
         long long res= LONG_MAX;
         vector<long long> vis(26,LONG_MAX);
@@ -24,7 +24,7 @@ public:
     long long minimumCost(string source, string target, vector<char>& original, vector<char>& changed, vector<int>& cost) {
         long long ans=0;
         unordered_map<long long,long long> costMap;
-        vector<vector<pair<char,int>>> g(26);
+        vector<vector<pair<int,int>>> g(26);
         for(int i=0;i<cost.size();i++)
             g[original[i]-'a'].push_back({changed[i]-'a',cost[i]});
         for(int i=0;i<source.size();i++)
