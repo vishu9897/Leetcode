@@ -22,7 +22,7 @@ public:
         }
         if(sum%2!=0) return false;
         sum=sum/2;
-        vector<vector<int>> dp(nums.size()+10,vector<int>(sum+3,-1));
+        vector<vector<int>> dp(nums.size()+10,vector<int>(sum+1,-1));
         return solve(nums,n,0,sum,dp);   
     }
 };
