@@ -14,7 +14,7 @@ public:
         {
           dp[i][0]=true;   
         }
-        if(nums[0]<=sum) dp[0][nums[0]]=true;
+        if(nums[0]==sum) dp[0][nums[0]]=true;
         for(int i=1;i<n;i++){
             for(int j=0;j<=sum;j++)
             {
