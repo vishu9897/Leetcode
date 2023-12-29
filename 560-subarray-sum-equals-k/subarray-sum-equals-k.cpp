@@ -7,11 +7,10 @@ public:
         for(auto num:nums)
         {
             sum+=num;
-            if(mp.find(sum-k)!=mp.end())
+            if(mp[sum-k])
             {
                 res+=mp[sum-k];
             }
-            // cout<<mp[sum-k]<<" "<<sum-k<<" "<<num<<endl;
             mp[sum]++;
         }
         return res;
