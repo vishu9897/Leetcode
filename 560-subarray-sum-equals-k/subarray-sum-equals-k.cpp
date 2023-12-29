@@ -2,18 +2,18 @@ class Solution {
 public:
     int subarraySum(vector<int>& nums, int k) {
         unordered_map<int,int> mp;
-        int sum=0,ans=0;
-        // mp[sum]=1;
-        for(int x: nums)
+        int sum=0,res=0;
+        mp[sum]=1;
+        for(auto num:nums)
         {
-            sum += x;
-            if(sum==k) ans++;
-            // cout<<sum<<endl;
-            
-            if(mp[sum-k]) ans+=mp[sum-k];
+            sum+=num;
+            if(mp.find(sum-k)!=mp.end())
+            {
+                res+=mp[sum-k];
+            }
+            // cout<<mp[sum-k]<<" "<<sum-k<<" "<<num<<endl;
             mp[sum]++;
         }
-        for(auto x:mp) cout<<x.first<<" "<<x.second<<endl;
-        return ans;
+        return res;
     }
 };
