@@ -1,14 +1,5 @@
 class Solution {
 public:
-    bool checkEqualSubset(vector<int> &nums,int index,int sumOfElements,vector<vector<int>> &dp)
-    {
-        if(index<0) return sumOfElements==0 ? true : false;
-        if(dp[index][sumOfElements]!=-1) return dp[index][sumOfElements]; 
-        bool take=false,ntake=false;
-        if(nums[index]<=sumOfElements) take=checkEqualSubset(nums,index-1,sumOfElements-nums[index],dp);
-        ntake=checkEqualSubset(nums,index-1,sumOfElements,dp);
-        return dp[index][sumOfElements]= take|ntake;
-    }
     bool canPartition(vector<int>& nums) {
         int sizeOfArray=nums.size(),sumOfElements=0;
        
@@ -16,9 +7,22 @@ public:
         {
             sumOfElements+=nums[i];
         }
-        if(sumOfElements%2!=0) return false;
+        if(sumOfElements%2!=0 || sizeOfArray<2 ) return false;
         sumOfElements=sumOfElements/2;
-        vector<vector<int>> dp(sizeOfArray,vector<int>(sumOfElements+2,-1));
-        return checkEqualSubset(nums,sizeOfArray-1,sumOfElements,dp);
+        vector<vector<bool>> dp(sizeOfArray,vector<bool>(sumOfElements+2,false));
+        if(nums[0]<=sumOfElements)
+        dp[0][nums[0]]=true;
+        for(int index=1;index<sizeOfArray;index++)
+        {
+            for(int j=0;j<=sumOfElements;j++)
+            {
+                bool take=false,ntake=false;
+                if(nums[index]<=j)
+                take=dp[index-1][j-nums[index]];
+                ntake=dp[index-1][j];
+                dp[index][j]=take|ntake;
+            }
+        }
+        return dp[sizeOfArray-1][sumOfElements];
     }
 };
