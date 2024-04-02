@@ -64,23 +64,23 @@ public:
                 if(frontNode->right && !vis[frontNode->right])
                 {
                     // cout<<frontNode->right->val<<" ";
-                    fl=1;
+                    // fl=1;
                     vis[frontNode->right]=1;
                     q.push(frontNode->right);
                 }
                 if(mp[frontNode] && !vis[mp[frontNode]])
                 {
                     // cout<<mp[frontNode]->val<<" ";
-                    fl=1;
+                    // fl=1;
 
                     vis[mp[frontNode]]=1;
                     q.push(mp[frontNode]);
                 }
                 // cout<<endl;
             }
-            if(fl) res++;
+             res++;
         }
-        return res;
+        return res-1;
 
     }
 };
