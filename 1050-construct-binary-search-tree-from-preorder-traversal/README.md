@@ -1,4 +1,4 @@
-<h2><a href="https://leetcode.com/problems/construct-binary-search-tree-from-preorder-traversal">1050. Construct Binary Search Tree from Preorder Traversal</a></h2><h3>Medium</h3><hr><p>Given an array of integers preorder, which represents the <strong>preorder traversal</strong> of a BST (i.e., <strong>binary search tree</strong>), construct the tree and return <em>its root</em>.</p>
+<h2><a href="https://leetcode.com/problems/construct-binary-search-tree-from-preorder-traversal">Construct Binary Search Tree from Preorder Traversal</a></h2> <img src='https://img.shields.io/badge/Difficulty-Medium-orange' alt='Difficulty: Medium' /><hr><p>Given an array of integers preorder, which represents the <strong>preorder traversal</strong> of a BST (i.e., <strong>binary search tree</strong>), construct the tree and return <em>its root</em>.</p>
 
 <p>It is <strong>guaranteed</strong> that there is always possible to find a binary search tree with the given requirements for the given test cases.</p>
 
