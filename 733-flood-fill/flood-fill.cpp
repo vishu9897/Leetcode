@@ -7,7 +7,7 @@ public:
         {
             int row= sr +drow[i];
             int col= sc+ dcol[i];
-            if(row>=0 && row<n && col>=0 && col<m && ans[row][col]==initCol)
+            if(row>=0 && row<n && col>=0 && col<m && img[row][col]==initCol && ans[row][col]!=color)
             {
                 DFS(img,row,col,color,initCol,n,m,ans,drow,dcol);
             }
@@ -20,7 +20,7 @@ public:
         int m=image[0].size();
         int drow[]={-1,0,0,1};
         int dcol[]={0,-1,1,0};
-        if(color==initCol) return ans;
+        // if(color==initCol) return ans;
         DFS(image,sr,sc,color,initCol,n,m,ans,drow,dcol);
         return ans;
     }
