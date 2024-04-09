@@ -5,10 +5,11 @@ public:
         while(right<n)
         {
             if(nums[right]==0) maxZero++;
-            while(maxZero > k){
+            if(maxZero > k){
                 if(nums[left]==0) maxZero--;
                 left++;
             }
+            if(maxZero <=k )
             maxLength= max(maxLength,right-left+1);
             right++;
 
