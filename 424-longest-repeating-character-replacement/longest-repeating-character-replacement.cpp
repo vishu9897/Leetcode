@@ -7,7 +7,7 @@ public:
         {
             mp[s[right]-'A']++;
             maxFreq=max(maxFreq,mp[s[right]-'A']);
-            while((right-left+1)-maxFreq > k)
+            if((right-left+1)-maxFreq > k)
             {
                 mp[s[left]-'A']--;
                 maxFreq=0;
@@ -17,7 +17,8 @@ public:
                 }
                 left++;
             }
-            maxLength=max(maxLength,right-left+1);
+            if((right-left+1)-maxFreq <= k)
+                maxLength=max(maxLength,right-left+1);
             right++;
         }   
         return maxLength;
