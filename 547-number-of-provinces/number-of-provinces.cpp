@@ -5,7 +5,24 @@ public:
         if(parent[u]==u) return u;
         return parent[u]= findParent(parent,parent[u]);
     }
-    
+    void unionBySize(vector<int> &size,vector<int> &parent,int u,int v)
+    {
+        int pu= findParent(parent,u);
+        int pv= findParent(parent,v);
+
+        if(pu==pv) return;
+
+        if(size[pu] > size[pv])
+        {
+            parent[pv] = pu;
+            size[pu]+=size[pv];
+        }
+        else
+        {
+            parent[pu]=pv;
+            size[pv]+=size[pu];
+        }
+    }
     void unionByRank(vector<int> &rank,vector<int> &parent,int u,int v)
     {
         int pu= findParent(parent,u);
@@ -31,6 +48,7 @@ public:
         int n=isConnected.size();
         vector<int> parent(n);
         vector<int> rank(n,0);
+        vector<int> size(n,1);
         int cnt=0;
 
         for(int i=0;i<n;i++)
@@ -44,7 +62,7 @@ public:
             {
                 if(isConnected[i][j]==1)
                 {
-                    unionByRank(rank,parent,i,j);     
+                    unionBySize(size,parent,i,j);     
                 }
             }
         }
