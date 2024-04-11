@@ -40,7 +40,7 @@ public:
         }
         else
         {
-            parent[v]=u;
+            parent[pv]=pu;
             rank[pu]++;
         }
     }
@@ -62,7 +62,7 @@ public:
             {
                 if(isConnected[i][j]==1)
                 {
-                    unionBySize(size,parent,i,j);     
+                    unionByRank(rank,parent,i,j);     
                 }
             }
         }
