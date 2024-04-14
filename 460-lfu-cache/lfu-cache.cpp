@@ -114,9 +114,11 @@ public:
             {
                 listFreq= freqListMap[minFreq];
             }      
+            
             Node *node = new Node(key,value);
-            listFreq->addFront(node);
             keyNode[key]=node;
+            listFreq->addFront(node);
+            
             freqListMap[minFreq]=listFreq;         
 
         }
