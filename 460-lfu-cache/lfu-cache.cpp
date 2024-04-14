@@ -73,7 +73,7 @@ public:
         node->count +=1;
         nextFreqList->addFront(node);
         freqListMap[node->count]=nextFreqList;
-        keyNode[node->key]=freqListMap[node->count]->head->next;
+        keyNode[node->key]=node;
 
     }
 
