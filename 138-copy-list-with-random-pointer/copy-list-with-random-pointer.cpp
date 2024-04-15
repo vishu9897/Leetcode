@@ -20,30 +20,50 @@ public:
 
         if(head==NULL) return NULL;
 
-        unordered_map<Node*,Node*> mp;
-        Node* newHead=new Node(head->val);
+        Node* newHead=NULL;
 
-        Node* tmp=head->next;
-        Node* temp= newHead;
-        mp[head]=newHead;
+        Node* tmp = head;
+
         while(tmp!=NULL)
         {
-            
-            Node* newNode= new Node(tmp->val);
-            mp[tmp]=newNode;
-            temp->next=newNode;
-            temp=newNode;
-            tmp=tmp->next;
+            Node* newNode = new Node(tmp->val);
+            newNode->next = tmp->next;
+            tmp->next = newNode;
+            tmp = tmp->next->next;
         }
-        cout<<"yes "<<newHead->val<<endl;
+        
+        tmp =  head;
+
+        while(tmp!=NULL)
+        {
+            if(tmp->random==NULL){
+                tmp->next->random=NULL;
+                
+            }
+            else{
+                tmp->next->random = tmp->random->next;  
+            }
+            tmp=tmp->next->next;
+        }
+
         tmp=head;
-        temp=newHead;
+        Node* temp;
+        tmp=head;
         while(tmp!=NULL)
         {
-           temp->random = mp[tmp->random];
-           tmp=tmp->next;
-           temp=temp->next;
+            Node* node= tmp->next->next;
+            if(newHead==NULL)
+            {
+                newHead= tmp->next;
+                temp=newHead;
+            }
+            if(node==NULL) temp->next=NULL;
+            else    temp->next=node->next;
+            temp=temp->next;
+            tmp->next= node;
+            tmp=node;
         }
+
         return newHead;
     }
 };
