@@ -14,9 +14,9 @@ public:
             }
             else{
                 charToNum=min(k,charToNum);
-                int tem=s[i]-'a';
-                tem=tem-charToNum;
-                res[i]=tem + 'a';
+                // int tem=s[i]-'a';
+                // tem=tem-charToNum;
+                res[i]=s[i] - charToNum;
                 k=k-charToNum;
             }
         }
