@@ -45,17 +45,6 @@ public:
             int w= edges[i][2];
             unionFind(u,v,w,parent,rank);
         }   
-        // cout<<"Parent: "<<endl;
-        // for(int i=0;i<n;i++)
-        // {
-        //     cout<<parent[i]<<" ";
-        // }
-        // cout<<endl<<"Rank: "<<endl;
-        // for(int i=0;i<n;i++)
-        // {
-        //     cout<<rank[i].first<<" "<<rank[i].second<<endl;
-        // }
-        // cout<<endl<<"finally: "<<endl;
         for(int i=0;i<query.size();i++)
         {
             int u=query[i][0];
@@ -69,3 +58,6 @@ public:
         return ans;
     }
 };
+
+//TC : O(E* LOG V)
+//SC : O(N) + O(N) + O(QuerySize)
