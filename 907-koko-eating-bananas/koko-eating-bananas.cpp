@@ -1,39 +1,29 @@
 class Solution {
 public:
-    bool solve(vector<int>& piles, int k,int h)
+    long long solve(vector<int> &piles,int mid)
     {
-        long long hour=0;
-        for(auto x:piles)
+        long long cnt=0;
+        for(int i=0;i<piles.size();i++)
         {
-            if(x <= k) hour++;
-            else
-            {
-                hour += ceil((double)x/(double)k);
-            }
+            cnt += ceil((double)piles[i]/(double)mid);
         }
-        // cout<<k<<" "<<hour<<endl;
-        if(hour<=h) return true;
-        return false;
+        return cnt;
     }
     int minEatingSpeed(vector<int>& piles, int h) {
-        int low=1,high=INT_MIN;
-        for(auto x: piles)
+        int  maxPile=INT_MIN;
+        for(int i=0;i<piles.size();i++)
         {
-            high=max(high,x);
-        } 
-        // cout<<low<<" "<<high;
+            maxPile= max(maxPile,piles[i]);
+        }
+        int low=1,high=maxPile;
         while(low<=high)
         {
-            int mid=low + (high-low)/2;
-            // cout<<low<<" "<<mid<<" "<<high<<endl;
-            if(solve(piles,mid,h)) 
-            {
-                // cout<<"YES"<<endl;
-                high=mid-1;
-            }
-            else
-            low=mid+1;
+            int mid= (low+high) /2;
+            long long hourFind=solve(piles,mid);
+            // cout<<mid<<" "<<hourFind<<endl;
+            if(h >= hourFind) high=mid-1;     
+            else  low=mid+1;
         }
-        return low;  
+        return low;
     }
 };
