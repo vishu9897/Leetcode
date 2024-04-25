@@ -25,6 +25,18 @@ public:
         cout<<sum<<endl;
 		vector<vector<int>> dp(nums.size(),vector<int>(sum+2,-1));
 		return solve(nums,sum,nums.size()-1,dp);
+        for(int i=1;i<=nums.size();i++){
+            for(int j=0;j<=sum;j++)
+            {
+                int take=0,ntake;
+                if(target-nums[i-1]>=0){
+                    take= dp[i-1][j-nums[i]];
+                }
+                ntake= dp[i-1][j];
+                dp[i][j]= take+ntake;               
+            }
+        }
+        return dp[nums.size()][sum];
     }
     
 };
