@@ -16,7 +16,20 @@ public:
         nums.insert(nums.begin(),1);
         nums.push_back(1);
         int n=nums.size();
-        vector<vector<int>> dp(n,vector<int>(n,-1));
+        vector<vector<int>> dp(n+2,vector<int>(n+2,0));
+        for(int i=n-1;i>=1;i--){
+            for(int j=1;j<n;j++)
+            {
+                int maxCost=INT_MIN;
+                if(i>=j) continue;
+                for(int k=i;k<j;k++)
+                {
+                    int cost= nums[i-1]*nums[k]*nums[j] + dp[i][k] + dp[k+1][j];
+                    maxCost= max(maxCost,cost);
+                }
+                dp[i][j]=maxCost;
+            }
+        }
         return solve(nums,1,n-1,dp);
         // return 0;
     }
