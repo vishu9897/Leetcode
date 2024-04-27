@@ -10,13 +10,13 @@ public:
             arr[i].first = ages[i];
             arr[i].second = scores[i];
         }
-        sort(arr.begin(), arr.end());
+        sort(arr.begin(), arr.end(),greater<pair<int,int>>());
         int team_score = 0;
         for(int i = 0; i < n; ++i){
             dp[i] = arr[i].second;
             for(int j = i - 1; j >= 0; --j){
                 // arr sorted by age, latter element has to have high score to maintain increasing susequence
-                if(arr[i].second >= arr[j].second){
+                if(arr[i].second <= arr[j].second){
                     // update each status
                     dp[i] = max(dp[i], dp[j] + arr[i].second); 
                 }
