@@ -12,28 +12,28 @@
 class Solution {
 public:
     int widthOfBinaryTree(TreeNode* root) {
-        if(root==NULL) return 0;
+        int res=INT_MIN;
         queue<pair<TreeNode*,long long>> q;
-        int maxi=INT_MIN;
-        q.push({root,1});
+        q.push({root,0});
         while(!q.empty())
         {
-            
             int s=q.size();
-            long long left,right,mini=q.front().second;
-
+            int temp=q.front().second;
+            int first=0,second=0;
             for(int i=0;i<s;i++)
             {
-                TreeNode* frontNode= q.front().first;
-                int data=q.front().second;
+                pair<TreeNode*,int> pr=q.front();
                 q.pop();
-                if(i==0) left= data;
-                if(i==s-1) right=data;
-                if(frontNode->left) q.push({frontNode->left,(data-mini)*2 +1});
-                if(frontNode->right) q.push({frontNode->right,(data-mini)*2 +2});
+                TreeNode* node= pr.first;
+                int index=pr.second;
+                if(i==0) first=index;
+                if(i==s-1) second=index;
+                if(node->left)q.push({node->left,(long long)(index-temp)*2+1});
+                if(node->right)q.push({node->right,(long long)(index-temp)*2+2});
             }
-            maxi=max(maxi,(int)(right-left+1));
+            // cout<<first<<" "<<second<<endl;
+            res=max(res,second-first+1);
         }
-        return maxi;
+        return res;
     }
 };
