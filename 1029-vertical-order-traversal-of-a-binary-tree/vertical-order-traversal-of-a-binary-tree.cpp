@@ -17,8 +17,8 @@ public:
         queue<pair<TreeNode*,pair<int,int>>> q;
         q.push({root,{0,0}});
         while(!q.empty()){
-            int s=q.size();
-            for(int i=0;i<s;i++){
+            // int s=q.size();
+            // for(int i=0;i<s;i++){
                 pair<TreeNode*,pair<int,int>> front=q.front();
                 q.pop();
                 TreeNode* node=front.first;
@@ -28,7 +28,7 @@ public:
 
                 if(node->left) q.push({node->left,{col-1,row+1}});
                 if(node->right) q.push({node->right,{col+1,row+1}});
-            }
+            // }
         }
         for(auto x:mp)
         {
