@@ -11,76 +11,38 @@
  */
 class Solution {
 public:
-    void findParent(TreeNode* root, map<TreeNode*,TreeNode*> &mp,TreeNode* &target,int data)
+    void solve(TreeNode* root,unordered_map<TreeNode*,TreeNode*> &mp,int start,TreeNode* &node)
     {
-        queue<TreeNode*> q;
-        q.push(root);
-        while(!q.empty())
-        {
-            int s=q.size();
-            for(int i=0;i<s;i++)
-            {
-                TreeNode* front=q.front();
-                if(front->val==data) target=front;
-                q.pop();
-                if(front->left)
-                {
-                    mp[front->left]=front;
-                    q.push(front->left);
-                }
-                if(front->right)
-                {
-                    mp[front->right]=front;
-                    q.push(front->right);
-                }
-            }
-        }
+        if(root==NULL) return;
+        if(root->val == start) node=root;
+        if(root->left) mp[root->left]=root;
+        if(root->right) mp[root->right] =root;
+
+        solve(root->left,mp,start,node);
+        solve(root->right,mp,start,node);
     }
     int amountOfTime(TreeNode* root, int start) {
-        map<TreeNode*,TreeNode*> mp;
-        TreeNode* target;
-        map<TreeNode*,int> vis;
-        findParent(root,mp,target,start); 
+        unordered_map<TreeNode*,TreeNode*> mp;
+        unordered_map<TreeNode*,int> visited;
+        TreeNode* node;
+        solve(root,mp,start,node);
         queue<TreeNode*> q;
-        q.push(target);
-        vis[target]=1;
-        int res=0;
+        q.push(node);
+        // cout<<node->val
+        int count=-1;
         while(!q.empty())
         {
-            int s=q.size(),fl=0;
-
-            for(int i=0;i<s;i++)
-            {
+            int si=q.size();
+            count++;
+            for(int i=0;i<si;i++){                
                 TreeNode* frontNode= q.front();
+                visited[frontNode]=1;
                 q.pop();
-                // cout<<frontNode->val<<" --> ";
-                if(frontNode->left && !vis[frontNode->left])
-                {
-                    cout<<frontNode->left->val<<" ";
-                    fl=1;
-                    vis[frontNode->left]=1;
-                    q.push(frontNode->left);
-                }
-                if(frontNode->right && !vis[frontNode->right])
-                {
-                    // cout<<frontNode->right->val<<" ";
-                    // fl=1;
-                    vis[frontNode->right]=1;
-                    q.push(frontNode->right);
-                }
-                if(mp[frontNode] && !vis[mp[frontNode]])
-                {
-                    // cout<<mp[frontNode]->val<<" ";
-                    // fl=1;
-
-                    vis[mp[frontNode]]=1;
-                    q.push(mp[frontNode]);
-                }
-                // cout<<endl;
+                if(frontNode->left && visited[frontNode->left]==0) q.push(frontNode->left);
+                if(frontNode->right && visited[frontNode->right]==0) q.push(frontNode->right);
+                if(mp.find(frontNode)!=mp.end() && visited[mp[frontNode]]==0) q.push(mp[frontNode]);
             }
-             res++;
         }
-        return res-1;
-
+        return count;
     }
 };
