@@ -23,12 +23,12 @@ public:
         {
             if(first==NULL)
             {
-                middle=root;
+                // middle=root;
                 first=prev;
             }
-            else{
+            // else{
                 last=root;
-            }
+            // }
 
         }
         prev=root;
