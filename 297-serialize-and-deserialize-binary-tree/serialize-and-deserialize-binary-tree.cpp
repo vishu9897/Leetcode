@@ -21,7 +21,7 @@ public:
             TreeNode* front= q.front();
             q.pop();
             if(front==NULL) s.append("#,");
-            else s.append(to_string(front->val)+',');
+            else s.append(to_string(front->val)+",");
             if(front!=NULL)
             {
                 q.push(front->left);
