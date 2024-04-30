@@ -1,4 +1,4 @@
-<h2><a href="https://leetcode.com/problems/maximum-sum-bst-in-binary-tree">1475. Maximum Sum BST in Binary Tree</a></h2><h3>Hard</h3><hr><p>Given a <strong>binary tree</strong> <code>root</code>, return <em>the maximum sum of all keys of <strong>any</strong> sub-tree which is also a Binary Search Tree (BST)</em>.</p>
+<h2><a href="https://leetcode.com/problems/maximum-sum-bst-in-binary-tree">Maximum Sum BST in Binary Tree</a></h2> <img src='https://img.shields.io/badge/Difficulty-Hard-red' alt='Difficulty: Hard' /><hr><p>Given a <strong>binary tree</strong> <code>root</code>, return <em>the maximum sum of all keys of <strong>any</strong> sub-tree which is also a Binary Search Tree (BST)</em>.</p>
 
 <p>Assume a BST is defined as follows:</p>
 
