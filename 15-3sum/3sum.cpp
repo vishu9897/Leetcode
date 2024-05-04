@@ -1,32 +1,34 @@
 class Solution {
 public:
     vector<vector<int>> threeSum(vector<int>& nums) {
-        vector<vector<int>> res;
         sort(nums.begin(),nums.end());
-        int n=nums.size()-1;
-        for(int i=0;i<=n-2;i++)
+        int n=nums.size();
+        int cnt=0;
+        vector<vector<int>> res;
+        set<vector<int> > ans;
+        int tempSum;
+        for(int i=0;i<n;i++)
         {
-            if(i==0 || (i>0 && nums[i]!=nums[i-1])){
-                int low=i+1, high=n, take=0 - nums[i];
-                while(high>low)
+            
+            int left= i+1, right=n-1;
+
+            while(left<right)
+            {
+                tempSum = nums[left] + nums[right] +nums[i];
+                if(tempSum==0){
+                     ans.insert({nums[i],nums[left],nums[right]});
+                }
+
+                if(tempSum<0)
                 {
-                    if(nums[low] + nums[high]==take)
-                    {
-                        vector<int> ans;
-                        ans.push_back(nums[i]);
-                        ans.push_back(nums[low]);
-                        ans.push_back(nums[high]);
-                        res.push_back(ans);
-                        while(low < high && nums[low]==nums[low+1]) low++;
-                        while(low < high && nums[high]==nums[high-1]) high--;
-                        low++;
-                        high--;
-                    }
-                    else if(nums[low] + nums[high] < take) low++;
-                    else high--;
+                    left++;
+                }
+                else{
+                    right--;
                 }
             }
         }
+        for(auto x: ans) res.push_back(x);
         return res;
     }
 };
