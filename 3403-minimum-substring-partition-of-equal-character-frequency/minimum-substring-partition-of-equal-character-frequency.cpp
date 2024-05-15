@@ -34,9 +34,35 @@ public:
         }
         return dp[index]=ans;
     }
+    void print(string s,int i,int j)
+    {
+        for(int k=i;k<=j;k++)
+        {
+            cout<<s[k]<<" ";
+        }
+        cout<<endl;
+    }
     int minimumSubstringsInPartition(string s) {
         int n=s.size();
-        vector<int> dp(n,-1);
+        vector<int> dp(n+1,0);
+        for(int i=n-1;i>=0;i--)
+        {
+            int freq[26]={0};
+            int ans=INT_MAX;
+            for(int j=i;j<n;j++)
+            {
+                freq[s[j]-'a']++;
+                // print(s,i,j);
+                if(checkString(freq))
+                {
+                    // cout<<"yes"<<endl;
+                    int calculate= 1 + dp[j+1];
+                    ans=min(ans,calculate);
+                }
+            }
+            dp[i]=ans;
+        }
+        return dp[0];
         return solve(s,0,n,dp);
     }
 };
