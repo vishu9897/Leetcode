@@ -11,6 +11,7 @@
 class Solution {
 public:
     ListNode* reverseKGroup(ListNode* head, int k) {
+        if(head==NULL) return NULL;
         ListNode *s,*r=NULL,*q=head;
         ListNode* temp=head;
         int c=0;
@@ -32,7 +33,7 @@ public:
             c++;
         }
 
-        if(head)
+        // if(head)
         head->next=reverseKGroup(q,k);
 
         return r;
