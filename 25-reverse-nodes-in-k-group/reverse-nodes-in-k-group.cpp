@@ -10,57 +10,32 @@
  */
 class Solution {
 public:
-    void reverseLL(ListNode *start,ListNode *end)
-    {
-        if(start==end)
-        {
-            return;
-        }
-        reverseLL(start->next,end);
-        ListNode* temp= start->next;
-        temp->next=start;
-        start->next=NULL;
-    }
     ListNode* reverseKGroup(ListNode* head, int k) {
-        int index=k;
-        ListNode* prevNode=NULL;
-        ListNode* nextNode=head;
-        ListNode* start=head;
-        ListNode* end=head;
-        while(end!=NULL)
+        ListNode *s,*r=NULL,*q=head;
+        ListNode* temp=head;
+        int c=0;
+        while(temp)
         {
-            cout<<"index :"<<index<<"   ";
-            if(prevNode) cout<<"prev "<<prevNode->val<<"  ";
-            if(nextNode) cout<<"next "<<nextNode->val<<endl;
-            if(index==0)
-            {   
-                cout<<"yes"<<endl;
-                if(start==head) head=end;
-                cout<<"recur "<<start->val<<" "<<end->val<<endl;
-                reverseLL(start,end);
-                if(prevNode)
-                {
-                    prevNode->next=end;
-                }    
-                start->next=nextNode;
-                prevNode=start;
-                start= nextNode;
-                ListNode* temp= head;
-                // cout<<prevNode->val<<" "<<nextNode->val<<endl;
-                index=k;
-                while(temp)
-                {
-                    cout<<temp->val<<" ";
-                    temp=temp->next;
-                }
-            }
-            end=nextNode;
-            if(nextNode==NULL) break;
-            // if(nextNode->next)
-            nextNode=nextNode->next;
-            index--;
-
+            temp=temp->next;
+            c++;
         }
-        return head;
+        if(c<k) return head;
+        c=0;
+        while(q && c < k)
+        {
+            s=r;
+            r=q;
+            q=q->next;
+
+            r->next=s;
+
+            c++;
+        }
+
+        if(head)
+        head->next=reverseKGroup(q,k);
+
+        return r;
+
     }
 };
