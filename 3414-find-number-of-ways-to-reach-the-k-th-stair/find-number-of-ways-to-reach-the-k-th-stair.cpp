@@ -18,11 +18,8 @@ ll find(int pos, int stat, int jump, int back, vector<ll> &exp, int k)
     if(stat == 1)
     {
         ans += find(pos-1, 0, jump, back+1, exp, k); // backstep
-        ans += find(pos+exp[jump], 1, jump+1, back, exp, k); // forward jump
     }
-
-    if(stat == 0)
-        ans += find(pos+exp[jump], 1, jump+1, back, exp, k); // forward jump
+    ans += find(pos+exp[jump], 1, jump+1, back, exp, k);
     
     return dp[jump][back][stat] = ans;
 }
