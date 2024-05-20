@@ -35,7 +35,7 @@ public:
                     curr->right=temp->right;
                     temp->right=temp->left;
                     temp->left=NULL;
-                    temp=temp->right;
+                    // temp=temp->right;
                 }
             }
         }
