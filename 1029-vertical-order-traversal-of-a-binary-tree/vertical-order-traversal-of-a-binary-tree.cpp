@@ -12,35 +12,36 @@
 class Solution {
 public:
     vector<vector<int>> verticalTraversal(TreeNode* root) {
+        vector<vector<int>> res;
         map<int,map<int,vector<int>>> mp;
-        vector<vector<int>> ans;
-        queue<pair<TreeNode*,pair<int,int>>> q;
+        queue<pair<TreeNode*,pair<int,int>>>q;
         q.push({root,{0,0}});
-        while(!q.empty()){
-            // int s=q.size();
-            // for(int i=0;i<s;i++){
-                pair<TreeNode*,pair<int,int>> front=q.front();
-                q.pop();
-                TreeNode* node=front.first;
-                int row=front.second.second;
-                int col=front.second.first;
-                mp[col][row].push_back(node->val);
-
-                if(node->left) q.push({node->left,{col-1,row+1}});
-                if(node->right) q.push({node->right,{col+1,row+1}});
-            // }
+        while(!q.empty())
+        {
+            pair<TreeNode*,pair<int,int>> pr=q.front();
+            int xAxis=pr.second.first;
+            int yAxis=pr.second.second;
+            TreeNode* frontNode= pr.first;
+            q.pop();
+            mp[xAxis][yAxis].push_back(frontNode->val);
+            if(frontNode->left)  q.push({frontNode->left,{xAxis-1,yAxis+1}});
+            if(frontNode->right) q.push({frontNode->right,{xAxis+1,yAxis+1}});
         }
         for(auto x:mp)
         {
             vector<int> temp;
-            for(auto y:x.second){
-                vector<int> srt=y.second;
-                sort(srt.begin(),srt.end());
-                for(auto x:srt)
-                    temp.push_back(x);
+            for(auto y:x.second)
+            {
+                vector<int> vc=y.second;
+                sort(vc.begin(),vc.end());
+                for(auto z:vc)
+                {
+                    temp.push_back(z);
+                }
+                
             }
-            ans.push_back(temp);
+            res.push_back(temp);
         }
-        return ans;
+        return res;
     }
 };
