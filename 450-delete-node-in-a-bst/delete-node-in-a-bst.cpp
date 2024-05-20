@@ -10,31 +10,35 @@
  * };
  */
 class Solution {
+private:
+    int maxVal(TreeNode* root)
+    {
+        if(root->right == NULL ) return root->val; 
+
+        return maxVal(root->right);
+    }
 public:
-    int findMaxVal(TreeNode* node)
-    {
-        while(node->right!=NULL) node=node->right;
-        return node->val;
-    }
-    TreeNode* solve(TreeNode* node,int key)
-    {
-        if(node==NULL) return NULL;
-        if(node->val==key)
-        {
-            if(node->left==NULL && node->right==NULL) return NULL;
-            if(node->left==NULL && node-> right) return node->right;
-            if(node->right==NULL && node->left) return node->left;
-            int maxVal= findMaxVal(node->left);
-            node->val=maxVal;
-            node->left=solve(node->left,maxVal);
-        }
-        else{
-            if(node->val < key) node->right=solve(node->right,key);
-            else node->left=solve(node->left,key);
-        }
-        return node;
-    }
     TreeNode* deleteNode(TreeNode* root, int key) {
-        return solve(root,key);   
+        if(root==NULL) return NULL;
+        if(root->val==key)
+        {
+            if(root->left==NULL && root->right==NULL) return NULL;
+
+            if(root->left && root->right==NULL) return root->left;
+            if(root->right && root->left==NULL) return root->right;
+
+            int val=maxVal(root->left);
+
+            root->val=val;
+
+            root->left=deleteNode(root->left,val);
+        }
+
+        else if(key < root->val)
+        root->left=deleteNode(root->left,key);
+        else if(key > root->val)
+        root->right=deleteNode(root->right,key);
+
+        return root;   
     }
 };
