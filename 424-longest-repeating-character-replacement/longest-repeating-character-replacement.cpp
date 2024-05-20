@@ -15,6 +15,7 @@ public:
                 mp[s[low]-'A']--;
                 low++;
             }
+            if((i-low+1-maxi) <=k)
             res=max(res,i-low+1);
         }
         return res;
