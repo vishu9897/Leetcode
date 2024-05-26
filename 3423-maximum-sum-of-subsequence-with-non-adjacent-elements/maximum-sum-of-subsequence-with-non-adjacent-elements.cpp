@@ -1,44 +1,37 @@
 class Solution {
-    
-private:
-    int mod = 1e9 + 7;
-    int maxNonAdjacentSum(vector<int>&arr, int n)
-    {
-    
-        int incl = arr[0];
-        int excl = 0;
-        int excl_new;
-        int i;
-
-        for (i = 1; i < n; i++) {
-            excl_new = max(incl, excl);
-            incl = excl + arr[i];
-            excl = excl_new;
-        }
-        return max(incl, excl);
-    }
 public:
     int maximumSumSubsequence(vector<int>& nums, vector<vector<int>>& queries) {
-        
-        int res = 0;        
-        int prevres = -1;
-        
-        for(auto it : queries){
+        int mod=1e9+7;
+        int n=nums.size();
+        int res=0;
+        int temp=0;
+        for(int i=0;i<queries.size();i++)
+        {
+            int index=queries[i][0];
+            int x= queries[i][1];
             
-            int u = it[0];
-            int v = it[1];
-            int previousVal = nums[u];
-            nums[u] = v;
-             
-            if(previousVal<=0 and nums[u]<=0 and prevres!=-1){
-                res = (res + prevres) %mod;
+            int ele= nums[index];
+            nums[index]=x;
+            if(ele<=0 && x<=0 && temp!=0){
+                res = (res+ temp)%mod;
+                continue;
+
             }
-            else{
-                int currentAns = maxNonAdjacentSum(nums,nums.size());
-                prevres = currentAns;
-                res = (res + currentAns)%mod;
+            int n=nums.size();
+            int prev=0;
+            int prev_prev=0;
+            int curr=0;
+            for(int i=0;i<n;i++)
+            {
+                int take=nums[i],ntake=0;
+                if(i-2 >= 0) take += prev_prev;
+                if(i-1 >= 0) ntake += prev;
+                curr=max(take,ntake);
+                prev_prev=prev;
+                prev=curr;
             }
-            
+            res = (res+ curr) %mod;
+            temp=curr;
         }
         return res;
     }
