@@ -1,74 +1,76 @@
 class Solution {
-private:
-    int findParent(int u,vector<int> &parent)
-    {
-        if(u==parent[u])
-        {
-            return u;
-        }
-        return parent[u]=findParent(parent[u],parent);
-    }
-    void findUnion(int u,int v,vector<int> &parent,vector<int> &rank)
-    {
-        int up=findParent(u,parent);
-        int uv= findParent(v,parent);
-
-        if(up==uv) return;
-
-        if(rank[up] < rank[uv]) parent[up]=uv;
-        else if(rank[up] > rank[uv]) parent[uv]=up;
-        else
-        {
-            parent[uv]=up;
-            rank[up]++;
-        }
-    }
 public:
-    
+    int findParent(int u, vector<int> &parent)
+    {
+        if(parent[u]==u) return u;
+
+        return parent[u]= findParent(parent[u],parent);
+    }
+    void unionThem(int u,int v,vector<int> &parent,vector<int> &rank)
+    {
+        int pu=findParent(u,parent);
+        int pv=findParent(v,parent);
+
+        if(pu==pv) return;
+
+        if(rank[pu] < rank[pv]) parent[pu]=pv;
+        else if(rank[pu] > rank[pv]) parent[pv]=pu;
+        else{
+            parent[pv]=pu;
+            rank[pu]++;
+        }
+    }
     vector<vector<string>> accountsMerge(vector<vector<string>>& accounts) {
-        int n=accounts.size();
-        vector<int> parent(n),rank(n);
-        for(int i=0;i<n;i++)
+        unordered_map<string,int> mp;
+        vector<int> parent(accounts.size());
+        vector<int> rank(accounts.size(),0);
+        for(int i=0;i<accounts.size();i++)
         {
             parent[i]=i;
         }
-        for(int i=0;i<n;i++)
+        for(int i=0;i<accounts.size();i++)
         {
-            rank[i]=0;
-        }
-        vector<vector<string>> res;
-        unordered_map<string,int> mp;
-        cout<<"1st step"<<endl;
-        for(int i=0;i<accounts.size();i++){
-            vector<string> acc= accounts[i];
-            for(int j=1;j<acc.size();j++){
-                string s=acc[j];
+            for(int j=1;j<accounts[i].size();j++)
+            {
+                string s= accounts[i][j];
+                //find in map
                 if(mp.find(s)!=mp.end())
                 {
-                    findUnion(mp[s],i,parent,rank);
+                    int u=mp[s];
+                    int v=i;
+
+                    unionThem(u,v,parent,rank);
                 }
-                else mp[s]=i;
+                else{
+                    mp[s]=i;
+                }
+            }   
+        }
+        vector<vector<string>> vc(accounts.size());
+        set<string> st;
+
+        for(auto x: mp)
+        {
+            string s= x.first;
+            int node =x.second;
+
+            node= findParent(node,parent);
+
+            vc[node].push_back(s);
+        }
+        vector<vector<string>> res;
+        for(int i=0;i<vc.size();i++)
+        {
+            if(vc[i].size()>0){
+                sort(vc[i].begin(),vc[i].end());
+                vc[i].insert(vc[i].begin(),accounts[i][0]);
+                res.push_back(vc[i]);
+
             }
         }
-            vector<string> mergedList[n];
-            for(auto it: mp)
-            {
-                int node=findParent(it.second,parent);
-                string mail=it.first;
 
-                mergedList[node].push_back(mail);
-            }
-            for(int i=0;i<n;i++)
-            {
-                if(mergedList[i].size()>0)
-                {
-                    sort(mergedList[i].begin(),mergedList[i].end());
-                    mergedList[i].insert(mergedList[i].begin(),accounts[i][0]);
-                    res.push_back(mergedList[i]);
-                }
-                
-            }
+
+
         return res;
-        
     }
 };
