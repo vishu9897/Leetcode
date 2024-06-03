@@ -33,9 +33,9 @@ public:
     }
     int minimumDifference(vector<int>& nums, int k) {
         int n=nums.size();
-        // int x=log(n)/log(2);
-        // int si= 2 * pow(2,x) - 1;
-        vector<int> seg(4*n,0);
+        int x=ceil(log(n)/log(2));
+        int si= 2 * pow(2,x) - 1;
+        vector<int> seg(si,0);
         int ans=INT_MAX;
         buildTree(seg,nums,0,n-1,0);
 
@@ -58,9 +58,10 @@ public:
             }
             if(ind!=-1){
                 ans = min(ans,abs(query(seg,0,n-1,0,i,ind)-k));
-            }
-                ans = min(ans,abs(query(seg,0,n-1,0,i,i)-k));
                 ans = min(ans,abs(query(seg,0,n-1,0,i,high+1)-k));
+            }
+                ans = min(ans,abs(nums[i]-k));
+                
         }
     return ans;    
     }
