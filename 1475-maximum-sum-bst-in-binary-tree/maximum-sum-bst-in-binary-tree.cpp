@@ -11,39 +11,46 @@
  */
 class Node{
     public:
+    int largest,smallest,sum;
 
-    int minNode,maxNode,sumofBst;
-  
-    Node(int mini,int maxi,int sum)
+    Node(int maxi,int mini,int s)
     {
-        minNode=mini;
-        maxNode=maxi;
-        sumofBst=sum;
+        largest=maxi;
+        smallest=mini;
+        sum=s;
     }
 };
+
 class Solution {
-private:
-    Node solve(TreeNode* root,int &ans){
-        if(root==NULL)
+    private:
+    Node solve(TreeNode* root,int &ans)
+    {
+        if(!root)
         {
-            return Node(INT_MAX,INT_MIN,0);
+            return Node(INT_MIN,INT_MAX,0);
         }
 
-        Node leftNode= solve(root->left,ans);
-        Node rightNode= solve(root->right,ans);
-        
-        if((leftNode.maxNode < root->val) && (root->val <rightNode.minNode))
+        Node leftNode=solve(root->left,ans);
+        Node rightNode=solve(root->right,ans);
+
+        if(leftNode.largest < root->val  && rightNode.smallest > root->val)
         {
-            ans=max(ans,root->val+leftNode.sumofBst+rightNode.sumofBst);
-            return Node(min(leftNode.minNode,root->val),max(rightNode.maxNode,root->val),root->val+leftNode.sumofBst+rightNode.sumofBst);
+            if(root->val==1){
+                cout<<leftNode.largest<<endl;
+                cout<<rightNode.smallest<<endl;
+            }
+            ans= max(ans,root->val + leftNode.sum + rightNode.sum);
+            return Node(max(max(root->val,leftNode.largest),rightNode.largest) , min(min(root->val,rightNode.smallest),leftNode.smallest) ,  root->val + leftNode.sum + rightNode.sum);
         }
-        
-        return Node(INT_MIN,INT_MAX,max(leftNode.sumofBst,rightNode.sumofBst));
+        else{
+            return Node(INT_MAX,INT_MIN,max(leftNode.sum,rightNode.sum));
+        }
+
     }
 public:
     int maxSumBST(TreeNode* root) {
         int ans=0;
         solve(root,ans);
-        return ans;
+        return ans>0 ? ans : 0;    
     }
 };
