@@ -8,23 +8,34 @@ public:
         }
         return maxi;
     }
-    int partitionArray(vector<int> &arr,int index,int k,vector<int> &dp)
-    {
-        if(index>=arr.size()) return 0;
-        if(dp[index]!=-1) return dp[index];
-        int res=INT_MIN;
-        for(int i=0;i<k && index+i<arr.size();i++)
-        {
+    // int partitionArray(vector<int> &arr,int index,int k,vector<int> &dp)
+    // {
+    //     if(index>=arr.size()) return 0;
+    //     if(dp[index]!=-1) return dp[index];
+    //     int res=INT_MIN;
+    //     for(int i=0;i<k && index+i<arr.size();i++)
+    //     {
             
-            int sum=calculateSum(arr,index,index+i);
-            int cases= sum*(i+1) + partitionArray(arr,index+i+1,k,dp);
-            res=max(res,cases);
-        }
-        return dp[index]=res;
+    //         int sum=calculateSum(arr,index,index+i);
+    //         int cases= sum*(i+1) + partitionArray(arr,index+i+1,k,dp);
+    //         res=max(res,cases);
+    //     }
+    //     return dp[index]=res;
         
-    }
+    // }
     int maxSumAfterPartitioning(vector<int>& arr, int k) {
-        vector<int> dp(arr.size()+5,-1);
-        return partitionArray(arr,0,k,dp);
+        vector<int> dp(arr.size()+5,-0);
+        for(int index=arr.size()-1;index>=0;index--)
+        {
+            int res=INT_MIN;
+            for(int i=0;i<k && index + i< arr.size();i++)
+            {
+                int sum= calculateSum(arr,index,index+i);
+                int cases= sum*(i+1) + dp[index+i+1];
+                res=max(res,cases);
+            }
+            dp[index]=res;
+        }
+        return dp[0];
     }
 };
