@@ -80,9 +80,31 @@ public:
     //         return dp[pos][tight][sum]=res;
     //     }
     // }
+    string subtractKro(string num1)
+    {
+        int index=num1.size()-1;
+        int carry=0;
+        do{
+            
+            if(num1[index]-'0'==0 && index==0){
+                num1.erase(num1.begin()+ index);
+            } 
+            else if(num1[index]-'0'==0){
+                num1[index]= '9';
+            } 
+            else {
+                num1[index]= ((num1[index]-'0')-1) + '0';
+                // cout<<num1<<" "<<index<<endl;
+                break;
+            }
+            index--;
+        }
+        while(true);
+        return num1;
+    }
     int count(string num1, string num2, int min_sum, int max_sum) {
         int i=num1.size();
-        num1[i-1]= ((num1[i-1]-'0') - 1 )+'0';
+        num1=subtractKro(num1);
         memset(dp,-1,sizeof(dp));
         ll sum2=solve(num2,0,1,0,min_sum,max_sum);
         memset(dp,-1,sizeof(dp));
