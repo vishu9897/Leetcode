@@ -9,8 +9,18 @@ This repository is your go-to destination for all things Data Structures and Alg
 | ------- |
 | [0312-burst-balloons](https://github.com/vishu9897/Leetcode/tree/master/0312-burst-balloons) |
 | [1121-partition-array-for-maximum-sum](https://github.com/vishu9897/Leetcode/tree/master/1121-partition-array-for-maximum-sum) |
+| [2848-special-permutations](https://github.com/vishu9897/Leetcode/tree/master/2848-special-permutations) |
 # Dynamic Programming
 |  |
 | ------- |
 | [0312-burst-balloons](https://github.com/vishu9897/Leetcode/tree/master/0312-burst-balloons) |
 | [1121-partition-array-for-maximum-sum](https://github.com/vishu9897/Leetcode/tree/master/1121-partition-array-for-maximum-sum) |
+| [2848-special-permutations](https://github.com/vishu9897/Leetcode/tree/master/2848-special-permutations) |
+# Bit Manipulation
+|  |
+| ------- |
+| [2848-special-permutations](https://github.com/vishu9897/Leetcode/tree/master/2848-special-permutations) |
+# Bitmask
+|  |
+| ------- |
+| [2848-special-permutations](https://github.com/vishu9897/Leetcode/tree/master/2848-special-permutations) |
