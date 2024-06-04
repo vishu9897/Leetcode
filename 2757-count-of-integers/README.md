@@ -1,4 +1,4 @@
-<h2><a href="https://leetcode.com/problems/count-of-integers">2757. Count of Integers</a></h2><h3>Hard</h3><hr><p>You are given two numeric strings <code>num1</code> and <code>num2</code> and two integers <code>max_sum</code> and <code>min_sum</code>. We denote an integer <code>x</code> to be <em>good</em> if:</p>
+<h2><a href="https://leetcode.com/problems/count-of-integers">Count of Integers</a></h2> <img src='https://img.shields.io/badge/Difficulty-Hard-red' alt='Difficulty: Hard' /><hr><p>You are given two numeric strings <code>num1</code> and <code>num2</code> and two integers <code>max_sum</code> and <code>min_sum</code>. We denote an integer <code>x</code> to be <em>good</em> if:</p>
 
 <ul>
 	<li><code>num1 &lt;= x &lt;= num2</code></li>
