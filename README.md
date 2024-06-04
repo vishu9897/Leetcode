@@ -8,22 +8,26 @@ This repository is your go-to destination for all things Data Structures and Alg
 |  |
 | ------- |
 | [0312-burst-balloons](https://github.com/vishu9897/Leetcode/tree/master/0312-burst-balloons) |
+| [0473-matchsticks-to-square](https://github.com/vishu9897/Leetcode/tree/master/0473-matchsticks-to-square) |
 | [1121-partition-array-for-maximum-sum](https://github.com/vishu9897/Leetcode/tree/master/1121-partition-array-for-maximum-sum) |
 | [2848-special-permutations](https://github.com/vishu9897/Leetcode/tree/master/2848-special-permutations) |
 # Dynamic Programming
 |  |
 | ------- |
 | [0312-burst-balloons](https://github.com/vishu9897/Leetcode/tree/master/0312-burst-balloons) |
+| [0473-matchsticks-to-square](https://github.com/vishu9897/Leetcode/tree/master/0473-matchsticks-to-square) |
 | [1121-partition-array-for-maximum-sum](https://github.com/vishu9897/Leetcode/tree/master/1121-partition-array-for-maximum-sum) |
 | [2757-count-of-integers](https://github.com/vishu9897/Leetcode/tree/master/2757-count-of-integers) |
 | [2848-special-permutations](https://github.com/vishu9897/Leetcode/tree/master/2848-special-permutations) |
 # Bit Manipulation
 |  |
 | ------- |
+| [0473-matchsticks-to-square](https://github.com/vishu9897/Leetcode/tree/master/0473-matchsticks-to-square) |
 | [2848-special-permutations](https://github.com/vishu9897/Leetcode/tree/master/2848-special-permutations) |
 # Bitmask
 |  |
 | ------- |
+| [0473-matchsticks-to-square](https://github.com/vishu9897/Leetcode/tree/master/0473-matchsticks-to-square) |
 | [2848-special-permutations](https://github.com/vishu9897/Leetcode/tree/master/2848-special-permutations) |
 # Math
 |  |
@@ -33,3 +37,7 @@ This repository is your go-to destination for all things Data Structures and Alg
 |  |
 | ------- |
 | [2757-count-of-integers](https://github.com/vishu9897/Leetcode/tree/master/2757-count-of-integers) |
+# Backtracking
+|  |
+| ------- |
+| [0473-matchsticks-to-square](https://github.com/vishu9897/Leetcode/tree/master/0473-matchsticks-to-square) |
