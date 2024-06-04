@@ -9,6 +9,7 @@ This repository is your go-to destination for all things Data Structures and Alg
 | ------- |
 | [0312-burst-balloons](https://github.com/vishu9897/Leetcode/tree/master/0312-burst-balloons) |
 | [0473-matchsticks-to-square](https://github.com/vishu9897/Leetcode/tree/master/0473-matchsticks-to-square) |
+| [0729-my-calendar-i](https://github.com/vishu9897/Leetcode/tree/master/0729-my-calendar-i) |
 | [1121-partition-array-for-maximum-sum](https://github.com/vishu9897/Leetcode/tree/master/1121-partition-array-for-maximum-sum) |
 | [2848-special-permutations](https://github.com/vishu9897/Leetcode/tree/master/2848-special-permutations) |
 # Dynamic Programming
@@ -41,3 +42,19 @@ This repository is your go-to destination for all things Data Structures and Alg
 |  |
 | ------- |
 | [0473-matchsticks-to-square](https://github.com/vishu9897/Leetcode/tree/master/0473-matchsticks-to-square) |
+# Binary Search
+|  |
+| ------- |
+| [0729-my-calendar-i](https://github.com/vishu9897/Leetcode/tree/master/0729-my-calendar-i) |
+# Design
+|  |
+| ------- |
+| [0729-my-calendar-i](https://github.com/vishu9897/Leetcode/tree/master/0729-my-calendar-i) |
+# Segment Tree
+|  |
+| ------- |
+| [0729-my-calendar-i](https://github.com/vishu9897/Leetcode/tree/master/0729-my-calendar-i) |
+# Ordered Set
+|  |
+| ------- |
+| [0729-my-calendar-i](https://github.com/vishu9897/Leetcode/tree/master/0729-my-calendar-i) |
