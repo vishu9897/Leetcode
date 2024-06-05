@@ -12,6 +12,7 @@ This repository is your go-to destination for all things Data Structures and Alg
 | [0473-matchsticks-to-square](https://github.com/vishu9897/Leetcode/tree/master/0473-matchsticks-to-square) |
 | [0729-my-calendar-i](https://github.com/vishu9897/Leetcode/tree/master/0729-my-calendar-i) |
 | [1121-partition-array-for-maximum-sum](https://github.com/vishu9897/Leetcode/tree/master/1121-partition-array-for-maximum-sum) |
+| [2488-divide-intervals-into-minimum-number-of-groups](https://github.com/vishu9897/Leetcode/tree/master/2488-divide-intervals-into-minimum-number-of-groups) |
 | [2848-special-permutations](https://github.com/vishu9897/Leetcode/tree/master/2848-special-permutations) |
 # Dynamic Programming
 |  |
@@ -63,7 +64,21 @@ This repository is your go-to destination for all things Data Structures and Alg
 |  |
 | ------- |
 | [0452-minimum-number-of-arrows-to-burst-balloons](https://github.com/vishu9897/Leetcode/tree/master/0452-minimum-number-of-arrows-to-burst-balloons) |
+| [2488-divide-intervals-into-minimum-number-of-groups](https://github.com/vishu9897/Leetcode/tree/master/2488-divide-intervals-into-minimum-number-of-groups) |
 # Sorting
 |  |
 | ------- |
 | [0452-minimum-number-of-arrows-to-burst-balloons](https://github.com/vishu9897/Leetcode/tree/master/0452-minimum-number-of-arrows-to-burst-balloons) |
+| [2488-divide-intervals-into-minimum-number-of-groups](https://github.com/vishu9897/Leetcode/tree/master/2488-divide-intervals-into-minimum-number-of-groups) |
+# Two Pointers
+|  |
+| ------- |
+| [2488-divide-intervals-into-minimum-number-of-groups](https://github.com/vishu9897/Leetcode/tree/master/2488-divide-intervals-into-minimum-number-of-groups) |
+# Heap (Priority Queue)
+|  |
+| ------- |
+| [2488-divide-intervals-into-minimum-number-of-groups](https://github.com/vishu9897/Leetcode/tree/master/2488-divide-intervals-into-minimum-number-of-groups) |
+# Prefix Sum
+|  |
+| ------- |
+| [2488-divide-intervals-into-minimum-number-of-groups](https://github.com/vishu9897/Leetcode/tree/master/2488-divide-intervals-into-minimum-number-of-groups) |
