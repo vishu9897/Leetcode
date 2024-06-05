@@ -8,6 +8,7 @@ This repository is your go-to destination for all things Data Structures and Alg
 |  |
 | ------- |
 | [0312-burst-balloons](https://github.com/vishu9897/Leetcode/tree/master/0312-burst-balloons) |
+| [0435-non-overlapping-intervals](https://github.com/vishu9897/Leetcode/tree/master/0435-non-overlapping-intervals) |
 | [0452-minimum-number-of-arrows-to-burst-balloons](https://github.com/vishu9897/Leetcode/tree/master/0452-minimum-number-of-arrows-to-burst-balloons) |
 | [0473-matchsticks-to-square](https://github.com/vishu9897/Leetcode/tree/master/0473-matchsticks-to-square) |
 | [0729-my-calendar-i](https://github.com/vishu9897/Leetcode/tree/master/0729-my-calendar-i) |
@@ -18,6 +19,7 @@ This repository is your go-to destination for all things Data Structures and Alg
 |  |
 | ------- |
 | [0312-burst-balloons](https://github.com/vishu9897/Leetcode/tree/master/0312-burst-balloons) |
+| [0435-non-overlapping-intervals](https://github.com/vishu9897/Leetcode/tree/master/0435-non-overlapping-intervals) |
 | [0473-matchsticks-to-square](https://github.com/vishu9897/Leetcode/tree/master/0473-matchsticks-to-square) |
 | [1121-partition-array-for-maximum-sum](https://github.com/vishu9897/Leetcode/tree/master/1121-partition-array-for-maximum-sum) |
 | [2757-count-of-integers](https://github.com/vishu9897/Leetcode/tree/master/2757-count-of-integers) |
@@ -63,11 +65,13 @@ This repository is your go-to destination for all things Data Structures and Alg
 # Greedy
 |  |
 | ------- |
+| [0435-non-overlapping-intervals](https://github.com/vishu9897/Leetcode/tree/master/0435-non-overlapping-intervals) |
 | [0452-minimum-number-of-arrows-to-burst-balloons](https://github.com/vishu9897/Leetcode/tree/master/0452-minimum-number-of-arrows-to-burst-balloons) |
 | [2488-divide-intervals-into-minimum-number-of-groups](https://github.com/vishu9897/Leetcode/tree/master/2488-divide-intervals-into-minimum-number-of-groups) |
 # Sorting
 |  |
 | ------- |
+| [0435-non-overlapping-intervals](https://github.com/vishu9897/Leetcode/tree/master/0435-non-overlapping-intervals) |
 | [0452-minimum-number-of-arrows-to-burst-balloons](https://github.com/vishu9897/Leetcode/tree/master/0452-minimum-number-of-arrows-to-burst-balloons) |
 | [2488-divide-intervals-into-minimum-number-of-groups](https://github.com/vishu9897/Leetcode/tree/master/2488-divide-intervals-into-minimum-number-of-groups) |
 # Two Pointers
