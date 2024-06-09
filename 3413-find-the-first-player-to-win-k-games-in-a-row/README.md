@@ -1,4 +1,4 @@
-<h2><a href="https://leetcode.com/problems/find-the-first-player-to-win-k-games-in-a-row">3413. Find The First Player to win K Games in a Row</a></h2><h3>Medium</h3><hr><p>A competition consists of <code>n</code> players numbered from <code>0</code> to <code>n - 1</code>.</p>
+<h2><a href="https://leetcode.com/problems/find-the-first-player-to-win-k-games-in-a-row">Find The First Player to win K Games in a Row</a></h2> <img src='https://img.shields.io/badge/Difficulty-Medium-orange' alt='Difficulty: Medium' /><hr><p>A competition consists of <code>n</code> players numbered from <code>0</code> to <code>n - 1</code>.</p>
 
 <p>You are given an integer array <code>skills</code> of size <code>n</code> and a <strong>positive</strong> integer <code>k</code>, where <code>skills[i]</code> is the skill level of player <code>i</code>. All integers in <code>skills</code> are <strong>unique</strong>.</p>
 
