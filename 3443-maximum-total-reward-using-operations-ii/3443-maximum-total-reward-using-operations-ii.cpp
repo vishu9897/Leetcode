@@ -2,6 +2,7 @@ class Solution {
 public:
     int solve(vector<int> &r,int index,int limit)
     {
+        cout<<r[index]<<" -- "<<limit<<endl;
        int ans=0;
        for(int j=index-1;j>=0;j--)
        {
@@ -16,7 +17,7 @@ public:
     int maxTotalReward(vector<int>& r) {
         sort(r.begin(),r.end());
         r.erase(unique(r.begin(),r.end()) , r.end());
-
+        vector<int> dp(1e6 , -1);
         return r.back() + solve(r,r.size()-1,r.back()-1);
     }
 };
