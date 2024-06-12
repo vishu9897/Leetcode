@@ -15,6 +15,7 @@ This repository is your go-to destination for all things Data Structures and Alg
 | [1121-partition-array-for-maximum-sum](https://github.com/vishu9897/Leetcode/tree/master/1121-partition-array-for-maximum-sum) |
 | [2488-divide-intervals-into-minimum-number-of-groups](https://github.com/vishu9897/Leetcode/tree/master/2488-divide-intervals-into-minimum-number-of-groups) |
 | [2848-special-permutations](https://github.com/vishu9897/Leetcode/tree/master/2848-special-permutations) |
+| [3442-maximum-total-reward-using-operations-i](https://github.com/vishu9897/Leetcode/tree/master/3442-maximum-total-reward-using-operations-i) |
 # Dynamic Programming
 |  |
 | ------- |
@@ -24,6 +25,7 @@ This repository is your go-to destination for all things Data Structures and Alg
 | [1121-partition-array-for-maximum-sum](https://github.com/vishu9897/Leetcode/tree/master/1121-partition-array-for-maximum-sum) |
 | [2757-count-of-integers](https://github.com/vishu9897/Leetcode/tree/master/2757-count-of-integers) |
 | [2848-special-permutations](https://github.com/vishu9897/Leetcode/tree/master/2848-special-permutations) |
+| [3442-maximum-total-reward-using-operations-i](https://github.com/vishu9897/Leetcode/tree/master/3442-maximum-total-reward-using-operations-i) |
 # Bit Manipulation
 |  |
 | ------- |
