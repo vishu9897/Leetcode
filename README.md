@@ -16,6 +16,7 @@ This repository is your go-to destination for all things Data Structures and Alg
 | [2488-divide-intervals-into-minimum-number-of-groups](https://github.com/vishu9897/Leetcode/tree/master/2488-divide-intervals-into-minimum-number-of-groups) |
 | [2848-special-permutations](https://github.com/vishu9897/Leetcode/tree/master/2848-special-permutations) |
 | [3442-maximum-total-reward-using-operations-i](https://github.com/vishu9897/Leetcode/tree/master/3442-maximum-total-reward-using-operations-i) |
+| [3443-maximum-total-reward-using-operations-ii](https://github.com/vishu9897/Leetcode/tree/master/3443-maximum-total-reward-using-operations-ii) |
 # Dynamic Programming
 |  |
 | ------- |
@@ -26,11 +27,13 @@ This repository is your go-to destination for all things Data Structures and Alg
 | [2757-count-of-integers](https://github.com/vishu9897/Leetcode/tree/master/2757-count-of-integers) |
 | [2848-special-permutations](https://github.com/vishu9897/Leetcode/tree/master/2848-special-permutations) |
 | [3442-maximum-total-reward-using-operations-i](https://github.com/vishu9897/Leetcode/tree/master/3442-maximum-total-reward-using-operations-i) |
+| [3443-maximum-total-reward-using-operations-ii](https://github.com/vishu9897/Leetcode/tree/master/3443-maximum-total-reward-using-operations-ii) |
 # Bit Manipulation
 |  |
 | ------- |
 | [0473-matchsticks-to-square](https://github.com/vishu9897/Leetcode/tree/master/0473-matchsticks-to-square) |
 | [2848-special-permutations](https://github.com/vishu9897/Leetcode/tree/master/2848-special-permutations) |
+| [3443-maximum-total-reward-using-operations-ii](https://github.com/vishu9897/Leetcode/tree/master/3443-maximum-total-reward-using-operations-ii) |
 # Bitmask
 |  |
 | ------- |
