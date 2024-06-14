@@ -2,7 +2,6 @@ class Solution {
 public:
     int solve(vector<int> &r,int index,int limit)
     {
-        cout<<r[index]<<" -- "<<limit<<endl;
        int ans=0;
        for(int j=index-1;j>=0;j--)
        {
