@@ -91,3 +91,11 @@ This repository is your go-to destination for all things Data Structures and Alg
 |  |
 | ------- |
 | [2488-divide-intervals-into-minimum-number-of-groups](https://github.com/vishu9897/Leetcode/tree/master/2488-divide-intervals-into-minimum-number-of-groups) |
+# Linked List
+|  |
+| ------- |
+| [0206-reverse-linked-list](https://github.com/vishu9897/Leetcode/tree/master/0206-reverse-linked-list) |
+# Recursion
+|  |
+| ------- |
+| [0206-reverse-linked-list](https://github.com/vishu9897/Leetcode/tree/master/0206-reverse-linked-list) |
