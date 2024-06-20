@@ -15,6 +15,7 @@ This repository is your go-to destination for all things Data Structures and Alg
 | [1121-partition-array-for-maximum-sum](https://github.com/vishu9897/Leetcode/tree/master/1121-partition-array-for-maximum-sum) |
 | [2488-divide-intervals-into-minimum-number-of-groups](https://github.com/vishu9897/Leetcode/tree/master/2488-divide-intervals-into-minimum-number-of-groups) |
 | [2848-special-permutations](https://github.com/vishu9897/Leetcode/tree/master/2848-special-permutations) |
+| [3438-peaks-in-array](https://github.com/vishu9897/Leetcode/tree/master/3438-peaks-in-array) |
 | [3442-maximum-total-reward-using-operations-i](https://github.com/vishu9897/Leetcode/tree/master/3442-maximum-total-reward-using-operations-i) |
 | [3443-maximum-total-reward-using-operations-ii](https://github.com/vishu9897/Leetcode/tree/master/3443-maximum-total-reward-using-operations-ii) |
 # Dynamic Programming
@@ -63,6 +64,7 @@ This repository is your go-to destination for all things Data Structures and Alg
 |  |
 | ------- |
 | [0729-my-calendar-i](https://github.com/vishu9897/Leetcode/tree/master/0729-my-calendar-i) |
+| [3438-peaks-in-array](https://github.com/vishu9897/Leetcode/tree/master/3438-peaks-in-array) |
 # Ordered Set
 |  |
 | ------- |
@@ -99,3 +101,7 @@ This repository is your go-to destination for all things Data Structures and Alg
 |  |
 | ------- |
 | [0206-reverse-linked-list](https://github.com/vishu9897/Leetcode/tree/master/0206-reverse-linked-list) |
+# Binary Indexed Tree
+|  |
+| ------- |
+| [3438-peaks-in-array](https://github.com/vishu9897/Leetcode/tree/master/3438-peaks-in-array) |
