@@ -1,4 +1,4 @@
-<h2><a href="https://leetcode.com/problems/peaks-in-array">3438. Peaks in Array</a></h2><h3>Hard</h3><hr><p>A <strong>peak</strong> in an array <code>arr</code> is an element that is <strong>greater</strong> than its previous and next element in <code>arr</code>.</p>
+<h2><a href="https://leetcode.com/problems/peaks-in-array">Peaks in Array</a></h2> <img src='https://img.shields.io/badge/Difficulty-Hard-red' alt='Difficulty: Hard' /><hr><p>A <strong>peak</strong> in an array <code>arr</code> is an element that is <strong>greater</strong> than its previous and next element in <code>arr</code>.</p>
 
 <p>You are given an integer array <code>nums</code> and a 2D integer array <code>queries</code>.</p>
 
