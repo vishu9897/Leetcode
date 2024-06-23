@@ -1,35 +1,132 @@
 class Solution {
 public:
-    int min1(vector<vector<int>>& g, const array<int, 4> &c) { // bottom, left, top, right
-    int a[4] = {INT_MAX, INT_MAX, 0, 0 }; 
-    for (int i = c[0]; i < c[2]; ++i)
-        for (int j = c[1]; j < c[3]; ++j)
-            if (g[i][j]) {
-                a[0] = min(a[0], i);
-                a[1] = min(a[1], j);
-                a[2] = max(a[2], i);
-                a[3] = max(a[3], j);                    
+    // Function to calculate the minimum area of rectangle enclosing all ones in a submatrix 
+    int minimumArea(vector<vector<int>>& grid, int st_i, int en_i, int st_j, int en_j) {
+        int i, j, start_row = 1e9, end_row = -1, start_col = 1e9, end_col = -1, found = 0;
+        for(i=st_i;i<=en_i;i++)    for(j=st_j;j<=en_j;j++){
+            if(grid[i][j]){
+                start_row = min(start_row, i);
+                end_row = max(end_row, i);
+                start_col = min(start_col, j);
+                end_col = max(end_col, j);
+                found = 1;
             }
-    return a[0] == INT_MAX ? 0 : (a[2] - a[0] + 1) * (a[3] - a[1] + 1);
-}
-int min2(vector<vector<int>>& g, const array<int, 4> &c) {
-    int res = INT_MAX;
-    for (int i = c[0] + 1; i <= c[2]; ++i)
-        res = min(res, min1(g, {c[0], c[1], i, c[3]}) + min1(g, {i, c[1], c[2], c[3]}));
-    for (int j = c[1] + 1; j <= c[3]; ++j)
-        res = min(res, min1(g, {c[0], c[1], c[2], j}) + min1(g, {c[0], j, c[2], c[3]}));
-    return res;
-}    
-int minimumSum(vector<vector<int>>& g) {
-    int res = INT_MAX, m = g.size(), n = g[0].size();
-    for (int i = 1; i <= m; ++i) {
-        array<int, 4> t = {0, 0, i, n}, b = {i, 0, m, n};
-        res = min({res, min1(g, t) + min2(g, b), min1(g, b) + min2(g, t)});
+        }
+        return found ? ((end_row - start_row + 1) * (end_col - start_col + 1)) : 0;
     }
-    for (int j = 1; j <= n; ++j) {
-        array<int, 4> l = {0, 0, m, j}, r = {0, j, m, n};
-        res = min({res, min1(g, l) + min2(g, r), min1(g, r) + min2(g, l) });
-    }    
-    return res;
-}
+    
+    int minimumSum(vector<vector<int>>& grid) {
+        int i, j, m = grid.size(), n = grid[0].size(), ans = 1e9, one, two, three;
+
+        /*
+        -------------
+        |    (1)    |
+        |           |
+        -------------
+        | (2) | (3) |
+        |     |     |
+        -------------
+        */
+        for(i=0;i<m;i++){
+            one = minimumArea(grid, 0, i, 0, n - 1);
+            for(j=0;j<n;j++){
+                two = minimumArea(grid, i + 1, m - 1, 0, j);
+                three = minimumArea(grid, i + 1, m - 1, j+1, n-1);
+                ans = min(ans, one + two + three);
+            }
+        }
+        
+        /*
+        -------------
+        |     | (2) |
+        |     |     |
+          (1) -------
+        |     |     |
+        |     | (3) |
+        -------------
+        */
+        for(j=0;j<n;j++){
+            one = minimumArea(grid, 0, m-1, 0, j);
+            for(i=0;i<m;i++){
+                two = minimumArea(grid, 0, i, j+1, n-1);
+                three = minimumArea(grid, i + 1, m - 1, j+1, n-1);
+                ans = min(ans, one + two + three);
+            }
+        }
+        
+        /*
+        -------------
+        |     |     |
+        | (2) |     |
+        ------- (1) |
+        |     |     |
+        | (3) |     |
+        -------------
+        */
+        for(j=n-1;j>=0;j--){
+            one = minimumArea(grid, 0, m-1, j+1, n-1);
+            for(i=0;i<m;i++){
+                two = minimumArea(grid, 0, i, 0, j);
+                three = minimumArea(grid, i + 1, m - 1, 0, j);
+                ans = min(ans, one + two + three);
+            }
+        }
+                
+                
+        /*
+        -------------
+        | (2) | (3) |
+        |     |     |
+        ------------
+        |           |
+        |    (1)    |
+        -------------
+        */
+        for(i=m-1;i>=0;i--){
+            one = minimumArea(grid, i+1, m-1, 0, n - 1);
+            for(j=0;j<n;j++){
+                two = minimumArea(grid, 0, i, 0, j);
+                three = minimumArea(grid, 0, i, j+1, n-1);
+                ans = min(ans, one + two + three);
+            }
+        }
+        
+        /*
+        -------------
+        |    (1)    |
+        -------------
+        |    (2)    |
+        -------------
+        |    (3)    |
+        -------------
+        */
+        for(i=0;i<m;i++){
+            for(j=i+1;j<m;j++){
+                one = minimumArea(grid, 0, i, 0, n-1);
+                two = minimumArea(grid, i+1, j, 0, n-1);
+                three = minimumArea(grid, j+1, m-1, 0, n-1);
+                ans = min(ans, one + two + three);
+            }
+        }
+        
+         /*
+        -------------
+        |   |   |   |
+        |   |   |   |
+        |(1)|(2)|(3)|
+        |   |   |   |
+        |   |   |   |
+        -------------
+        */        
+        for(i=0;i<n;i++){
+            for(j=i+1;j<n;j++){
+                one = minimumArea(grid, 0, m-1, 0, i);
+                two = minimumArea(grid, 0, m-1, i+1, j);
+                three = minimumArea(grid, 0, m-1, j+1, n-1);
+                ans = min(ans, one + two + three);
+            }
+        }
+        
+        return ans;
+    }
 };
