@@ -8,14 +8,10 @@ public:
         int sub=0;
         for(int i=0;i<=ind+1;i++)
         {
-            // cout<<ind+1<<" "<<cnt+i<<endl;
             if(mp.find(ind+1)!=mp.end() && mp[ind+1] != cnt+i){
-                // cout<<mp[ind+1]<<" ";
-                // cout<<"yes"<<endl;
                 continue;
             } 
             if(cnt+i >400) continue;
-            // cout<<"--"<<endl;
             sub = (sub + solve(ind+1,n,mp,cnt+i,dp))%mod;
         }
         return dp[ind][cnt]= sub;
