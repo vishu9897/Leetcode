@@ -7,6 +7,7 @@ This repository is your go-to destination for all things Data Structures and Alg
 # Array
 |  |
 | ------- |
+| [0307-range-sum-query-mutable](https://github.com/vishu9897/Leetcode/tree/master/0307-range-sum-query-mutable) |
 | [0312-burst-balloons](https://github.com/vishu9897/Leetcode/tree/master/0312-burst-balloons) |
 | [0435-non-overlapping-intervals](https://github.com/vishu9897/Leetcode/tree/master/0435-non-overlapping-intervals) |
 | [0452-minimum-number-of-arrows-to-burst-balloons](https://github.com/vishu9897/Leetcode/tree/master/0452-minimum-number-of-arrows-to-burst-balloons) |
@@ -59,10 +60,12 @@ This repository is your go-to destination for all things Data Structures and Alg
 # Design
 |  |
 | ------- |
+| [0307-range-sum-query-mutable](https://github.com/vishu9897/Leetcode/tree/master/0307-range-sum-query-mutable) |
 | [0729-my-calendar-i](https://github.com/vishu9897/Leetcode/tree/master/0729-my-calendar-i) |
 # Segment Tree
 |  |
 | ------- |
+| [0307-range-sum-query-mutable](https://github.com/vishu9897/Leetcode/tree/master/0307-range-sum-query-mutable) |
 | [0729-my-calendar-i](https://github.com/vishu9897/Leetcode/tree/master/0729-my-calendar-i) |
 | [3438-peaks-in-array](https://github.com/vishu9897/Leetcode/tree/master/3438-peaks-in-array) |
 # Ordered Set
@@ -104,4 +107,5 @@ This repository is your go-to destination for all things Data Structures and Alg
 # Binary Indexed Tree
 |  |
 | ------- |
+| [0307-range-sum-query-mutable](https://github.com/vishu9897/Leetcode/tree/master/0307-range-sum-query-mutable) |
 | [3438-peaks-in-array](https://github.com/vishu9897/Leetcode/tree/master/3438-peaks-in-array) |
