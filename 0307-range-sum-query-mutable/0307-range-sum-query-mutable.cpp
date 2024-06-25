@@ -1,53 +1,52 @@
 class NumArray {
 public:
-    int createST(vector<int> &st,int ind,int l,int r,vector<int> &arr)
+    void createSegment(vector<int> &st,vector<int> &nums,int l,int r,int in)
     {
-        
-        if(l>r) return 0;
-        if(l==r) return st[ind] = arr[l];
-        int mid= l + (r-l)/2;
-        return st[ind] = createST(st,2*ind+1,l,mid,arr) + createST(st,2*ind+2,mid+1,r,arr);
-    }
-    
-    int queryST(vector<int> &st,int ind,int l,int r, int ql,int qr)
-    {
-        if(l>r) return 0;
-        if(l>qr || r<ql) return 0;
-        if(l>=ql && qr>=r) return st[ind];
-
-        int mid= l + (r-l)/2;
-        return queryST(st,2*ind+1,l,mid,ql,qr) + queryST(st,2*ind+2,mid+1,r,ql,qr);
-    }
-
-    int updateST(vector<int> &st,int ind,int l,int r,int diff,int &updateInd)
-    {
-
-        if(l>r) return 0;
-        if(l> updateInd ||r< updateInd) return st[ind];
-        if(l==updateInd && r==updateInd){
-            return st[ind] = diff;
+        if(l>r) return;
+        if(l==r){
+            st[in]=nums[l];
+            return;
         } 
-        if(l<r)
-        {
-            int mid= l + (r-l)/2;
-            st[ind]= updateST(st,2*ind+1,l,mid,diff,updateInd) + updateST(st,2*ind+2,mid+1,r,diff,updateInd);
-        }
-        return st[ind];
+        
+        int mid= l + (r-l)/2;
+        createSegment(st,nums,l,mid,2*in+1);
+        createSegment(st,nums,mid+1,r,2*in+2);
+        st[in]= st[in*2+1] + st[in*2+2]; 
+    }
+    int findQuery(vector<int> &st,int l,int r,int ql,int qr,int in)
+    {
+        if(ql<=l && qr>=r) return st[in];
+        if(l > qr || r < ql) return 0;
+        if(l>r) return 0;
+
+        int mid= l + (r-l)/2;
+        return findQuery(st,l,mid,ql,qr,2*in+1) + findQuery(st,mid+1,r,ql,qr,2*in+2);
+        
+    }
+    int updateSeg(vector<int> &st,int l,int r,int in,int index,int val)
+    {
+        if(index > r) return st[in];
+        if(index < l) return st[in];
+        if(l==index && r==index) return st[in]=val;
+        int mid= l+(r-l)/2;
+        int left=updateSeg(st,l,mid,2*in+1,index,val);
+        int right=updateSeg(st,mid+1,r,2*in+2,index,val);
+        return st[in]= left+right;
     }
     vector<int> st;
-    int n=0;
+    int n;
     NumArray(vector<int>& nums) {
         n=nums.size();
         st.resize(4*n,0);
-        createST(st,0,0,n-1,nums);    
+        createSegment(st,nums,0,n-1,0);
     }
     
     void update(int index, int val) {
-        updateST(st,0,0,n-1,val,index);
+        updateSeg(st,0,n-1,0,index,val);
     }
     
     int sumRange(int left, int right) {
-        return queryST(st,0,0,n-1,left,right);
+       return findQuery(st,0,n-1,left,right,0); 
     }
 };
 
