@@ -19,6 +19,7 @@ This repository is your go-to destination for all things Data Structures and Alg
 | [3438-peaks-in-array](https://github.com/vishu9897/Leetcode/tree/master/3438-peaks-in-array) |
 | [3442-maximum-total-reward-using-operations-i](https://github.com/vishu9897/Leetcode/tree/master/3442-maximum-total-reward-using-operations-i) |
 | [3443-maximum-total-reward-using-operations-ii](https://github.com/vishu9897/Leetcode/tree/master/3443-maximum-total-reward-using-operations-ii) |
+| [3464-maximize-total-cost-of-alternating-subarrays](https://github.com/vishu9897/Leetcode/tree/master/3464-maximize-total-cost-of-alternating-subarrays) |
 # Dynamic Programming
 |  |
 | ------- |
@@ -30,6 +31,7 @@ This repository is your go-to destination for all things Data Structures and Alg
 | [2848-special-permutations](https://github.com/vishu9897/Leetcode/tree/master/2848-special-permutations) |
 | [3442-maximum-total-reward-using-operations-i](https://github.com/vishu9897/Leetcode/tree/master/3442-maximum-total-reward-using-operations-i) |
 | [3443-maximum-total-reward-using-operations-ii](https://github.com/vishu9897/Leetcode/tree/master/3443-maximum-total-reward-using-operations-ii) |
+| [3464-maximize-total-cost-of-alternating-subarrays](https://github.com/vishu9897/Leetcode/tree/master/3464-maximize-total-cost-of-alternating-subarrays) |
 # Bit Manipulation
 |  |
 | ------- |
