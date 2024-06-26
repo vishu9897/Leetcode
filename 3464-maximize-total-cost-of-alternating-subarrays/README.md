@@ -1,4 +1,4 @@
-<h2><a href="https://leetcode.com/problems/maximize-total-cost-of-alternating-subarrays">3464. Maximize Total Cost of Alternating Subarrays</a></h2><h3>Medium</h3><hr><p>You are given an integer array <code>nums</code> with length <code>n</code>.</p>
+<h2><a href="https://leetcode.com/problems/maximize-total-cost-of-alternating-subarrays">Maximize Total Cost of Alternating Subarrays</a></h2> <img src='https://img.shields.io/badge/Difficulty-Medium-orange' alt='Difficulty: Medium' /><hr><p>You are given an integer array <code>nums</code> with length <code>n</code>.</p>
 
 <p>The <strong>cost</strong> of a <span data-keyword="subarray-nonempty">subarray</span> <code>nums[l..r]</code>, where <code>0 &lt;= l &lt;= r &lt; n</code>, is defined as:</p>
 
