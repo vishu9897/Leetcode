@@ -111,3 +111,18 @@ This repository is your go-to destination for all things Data Structures and Alg
 | ------- |
 | [0307-range-sum-query-mutable](https://github.com/vishu9897/Leetcode/tree/master/0307-range-sum-query-mutable) |
 | [3438-peaks-in-array](https://github.com/vishu9897/Leetcode/tree/master/3438-peaks-in-array) |
+<!---LeetCode Topics Start-->
+# LeetCode Topics
+## Hash Table
+|  |
+| ------- |
+| [3447-clear-digits](https://github.com/vishu9897/Leetcode/tree/master/3447-clear-digits) |
+## String
+|  |
+| ------- |
+| [3447-clear-digits](https://github.com/vishu9897/Leetcode/tree/master/3447-clear-digits) |
+## Simulation
+|  |
+| ------- |
+| [3447-clear-digits](https://github.com/vishu9897/Leetcode/tree/master/3447-clear-digits) |
+<!---LeetCode Topics End-->
