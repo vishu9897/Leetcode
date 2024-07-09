@@ -125,4 +125,12 @@ This repository is your go-to destination for all things Data Structures and Alg
 |  |
 | ------- |
 | [3447-clear-digits](https://github.com/vishu9897/Leetcode/tree/master/3447-clear-digits) |
+## Array
+|  |
+| ------- |
+| [3460-count-the-number-of-inversions](https://github.com/vishu9897/Leetcode/tree/master/3460-count-the-number-of-inversions) |
+## Dynamic Programming
+|  |
+| ------- |
+| [3460-count-the-number-of-inversions](https://github.com/vishu9897/Leetcode/tree/master/3460-count-the-number-of-inversions) |
 <!---LeetCode Topics End-->
