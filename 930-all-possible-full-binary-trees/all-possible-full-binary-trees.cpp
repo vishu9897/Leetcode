@@ -11,14 +11,18 @@
  */
 class Solution {
 public:
-    
+    unordered_map<string,vector<TreeNode*>> dp;
     vector<TreeNode*> generateFBT(int start,int end)
     {
         if(start>end) return {NULL};
-        if((end-start+1)%2==0) return{};
-        // if(dp[start][end]!={}) return dp[start][end];
+        if((end-start+1)%2==0) {
+            return{};
+        }
+        string Key = to_string(start)+"-"+to_string(end);
+        if(dp.find(Key)!=dp.end()) return dp[Key];
         vector<TreeNode*> leftNodes,rightNodes;
         vector<TreeNode*> res;
+       
         for(int i=start;i<=end;i++){
             leftNodes= generateFBT(start,i-1);
             rightNodes= generateFBT(i+1,end);
@@ -27,14 +31,15 @@ public:
                 for(auto r: rightNodes)
                 {
                     TreeNode* root= new TreeNode(0);
-                   
+                    // if(l && r)
+                    // cout<<l->val<<" "<<r->val<<endl;
                     root->left= l;
                     root->right= r;
                     res.push_back(root);
                 }
             }
         }
-        return res;
+        return dp[Key]=res;
     }
     vector<TreeNode*> allPossibleFBT(int n) {
         // memset(dp,{},sizeof(dp));
