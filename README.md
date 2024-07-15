@@ -133,10 +133,27 @@ This repository is your go-to destination for all things Data Structures and Alg
 ## Dynamic Programming
 |  |
 | ------- |
+| [0930-all-possible-full-binary-trees](https://github.com/vishu9897/Leetcode/tree/master/0930-all-possible-full-binary-trees) |
 | [1559-cherry-pickup-ii](https://github.com/vishu9897/Leetcode/tree/master/1559-cherry-pickup-ii) |
 | [3460-count-the-number-of-inversions](https://github.com/vishu9897/Leetcode/tree/master/3460-count-the-number-of-inversions) |
 ## Matrix
 |  |
 | ------- |
 | [1559-cherry-pickup-ii](https://github.com/vishu9897/Leetcode/tree/master/1559-cherry-pickup-ii) |
+## Tree
+|  |
+| ------- |
+| [0930-all-possible-full-binary-trees](https://github.com/vishu9897/Leetcode/tree/master/0930-all-possible-full-binary-trees) |
+## Recursion
+|  |
+| ------- |
+| [0930-all-possible-full-binary-trees](https://github.com/vishu9897/Leetcode/tree/master/0930-all-possible-full-binary-trees) |
+## Memoization
+|  |
+| ------- |
+| [0930-all-possible-full-binary-trees](https://github.com/vishu9897/Leetcode/tree/master/0930-all-possible-full-binary-trees) |
+## Binary Tree
+|  |
+| ------- |
+| [0930-all-possible-full-binary-trees](https://github.com/vishu9897/Leetcode/tree/master/0930-all-possible-full-binary-trees) |
 <!---LeetCode Topics End-->
