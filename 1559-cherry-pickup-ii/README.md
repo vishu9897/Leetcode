@@ -1,4 +1,4 @@
-<h2><a href="https://leetcode.com/problems/cherry-pickup-ii">1559. Cherry Pickup II</a></h2><h3>Hard</h3><hr><p>You are given a <code>rows x cols</code> matrix <code>grid</code> representing a field of cherries where <code>grid[i][j]</code> represents the number of cherries that you can collect from the <code>(i, j)</code> cell.</p>
+<h2><a href="https://leetcode.com/problems/cherry-pickup-ii">Cherry Pickup II</a></h2> <img src='https://img.shields.io/badge/Difficulty-Hard-red' alt='Difficulty: Hard' /><hr><p>You are given a <code>rows x cols</code> matrix <code>grid</code> representing a field of cherries where <code>grid[i][j]</code> represents the number of cherries that you can collect from the <code>(i, j)</code> cell.</p>
 
 <p>You have two robots that can collect cherries for you:</p>
 
