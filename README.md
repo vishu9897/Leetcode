@@ -128,9 +128,15 @@ This repository is your go-to destination for all things Data Structures and Alg
 ## Array
 |  |
 | ------- |
+| [1559-cherry-pickup-ii](https://github.com/vishu9897/Leetcode/tree/master/1559-cherry-pickup-ii) |
 | [3460-count-the-number-of-inversions](https://github.com/vishu9897/Leetcode/tree/master/3460-count-the-number-of-inversions) |
 ## Dynamic Programming
 |  |
 | ------- |
+| [1559-cherry-pickup-ii](https://github.com/vishu9897/Leetcode/tree/master/1559-cherry-pickup-ii) |
 | [3460-count-the-number-of-inversions](https://github.com/vishu9897/Leetcode/tree/master/3460-count-the-number-of-inversions) |
+## Matrix
+|  |
+| ------- |
+| [1559-cherry-pickup-ii](https://github.com/vishu9897/Leetcode/tree/master/1559-cherry-pickup-ii) |
 <!---LeetCode Topics End-->
