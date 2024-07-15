@@ -116,10 +116,12 @@ This repository is your go-to destination for all things Data Structures and Alg
 ## Hash Table
 |  |
 | ------- |
+| [0855-count-unique-characters-of-all-substrings-of-a-given-string](https://github.com/vishu9897/Leetcode/tree/master/0855-count-unique-characters-of-all-substrings-of-a-given-string) |
 | [3447-clear-digits](https://github.com/vishu9897/Leetcode/tree/master/3447-clear-digits) |
 ## String
 |  |
 | ------- |
+| [0855-count-unique-characters-of-all-substrings-of-a-given-string](https://github.com/vishu9897/Leetcode/tree/master/0855-count-unique-characters-of-all-substrings-of-a-given-string) |
 | [3447-clear-digits](https://github.com/vishu9897/Leetcode/tree/master/3447-clear-digits) |
 ## Simulation
 |  |
@@ -133,6 +135,7 @@ This repository is your go-to destination for all things Data Structures and Alg
 ## Dynamic Programming
 |  |
 | ------- |
+| [0855-count-unique-characters-of-all-substrings-of-a-given-string](https://github.com/vishu9897/Leetcode/tree/master/0855-count-unique-characters-of-all-substrings-of-a-given-string) |
 | [0930-all-possible-full-binary-trees](https://github.com/vishu9897/Leetcode/tree/master/0930-all-possible-full-binary-trees) |
 | [1559-cherry-pickup-ii](https://github.com/vishu9897/Leetcode/tree/master/1559-cherry-pickup-ii) |
 | [3460-count-the-number-of-inversions](https://github.com/vishu9897/Leetcode/tree/master/3460-count-the-number-of-inversions) |
