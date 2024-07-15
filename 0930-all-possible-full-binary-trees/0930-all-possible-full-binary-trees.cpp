@@ -12,33 +12,34 @@
 class Solution {
 public:
     unordered_map<string,vector<TreeNode*>> dp;
-    vector<TreeNode*> helper(int start, int end){
-        if(start>end){
-            return {NULL};
-        }
-        if((end-start+1)%2==0){  // can't make BINARY TREE with even count of nodes
-            return {};
-        }
-        string KEY=to_string(start)+"-"+to_string(end);
-        if(dp.find(KEY)!=dp.end()){
-            return dp[KEY];
-        }
+    vector<TreeNode*> generateFBT(int start,int end)
+    {
+        if(start>end) return {NULL};
+        if((end-start+1)%2==0) return{};
+        string Key = to_string(start)+"-"+to_string(end);
+        if(dp.find(Key)!=dp.end()) return dp[Key];
+        vector<TreeNode*> leftNodes,rightNodes;
         vector<TreeNode*> res;
+        // TreeNode* root= new TreeNode(0);
         for(int i=start;i<=end;i++){
-            vector<TreeNode*> left=helper(start,i-1);
-            vector<TreeNode*> right=helper(i+1,end);
-            for(auto l: left){
-                for(auto r: right){
-                    TreeNode* root=new TreeNode(0);
-                    root->right=r;
-                    root->left=l;
+            leftNodes= generateFBT(start,i-1);
+            rightNodes= generateFBT(i+1,end);
+            for(auto l: leftNodes)
+            {
+                for(auto r: rightNodes)
+                {
+                    TreeNode* root= new TreeNode(0);
+                    
+                    root->left= l;
+                    root->right= r;
                     res.push_back(root);
                 }
             }
         }
-        return dp[KEY]=res;
+        return dp[Key]=res;
     }
     vector<TreeNode*> allPossibleFBT(int n) {
-        return helper(1,n);
+        // memset(dp,{},sizeof(dp));
+        return generateFBT(1,n);   
     }
 };
