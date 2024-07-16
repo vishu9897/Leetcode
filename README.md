@@ -132,6 +132,7 @@ This repository is your go-to destination for all things Data Structures and Alg
 | ------- |
 | [1559-cherry-pickup-ii](https://github.com/vishu9897/Leetcode/tree/master/1559-cherry-pickup-ii) |
 | [3460-count-the-number-of-inversions](https://github.com/vishu9897/Leetcode/tree/master/3460-count-the-number-of-inversions) |
+| [3469-maximum-height-of-a-triangle](https://github.com/vishu9897/Leetcode/tree/master/3469-maximum-height-of-a-triangle) |
 ## Dynamic Programming
 |  |
 | ------- |
@@ -159,4 +160,8 @@ This repository is your go-to destination for all things Data Structures and Alg
 |  |
 | ------- |
 | [0930-all-possible-full-binary-trees](https://github.com/vishu9897/Leetcode/tree/master/0930-all-possible-full-binary-trees) |
+## Enumeration
+|  |
+| ------- |
+| [3469-maximum-height-of-a-triangle](https://github.com/vishu9897/Leetcode/tree/master/3469-maximum-height-of-a-triangle) |
 <!---LeetCode Topics End-->
