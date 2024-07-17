@@ -134,6 +134,7 @@ This repository is your go-to destination for all things Data Structures and Alg
 | [3460-count-the-number-of-inversions](https://github.com/vishu9897/Leetcode/tree/master/3460-count-the-number-of-inversions) |
 | [3469-maximum-height-of-a-triangle](https://github.com/vishu9897/Leetcode/tree/master/3469-maximum-height-of-a-triangle) |
 | [3490-find-the-maximum-length-of-valid-subsequence-i](https://github.com/vishu9897/Leetcode/tree/master/3490-find-the-maximum-length-of-valid-subsequence-i) |
+| [3491-find-the-maximum-length-of-valid-subsequence-ii](https://github.com/vishu9897/Leetcode/tree/master/3491-find-the-maximum-length-of-valid-subsequence-ii) |
 ## Dynamic Programming
 |  |
 | ------- |
@@ -142,6 +143,7 @@ This repository is your go-to destination for all things Data Structures and Alg
 | [1559-cherry-pickup-ii](https://github.com/vishu9897/Leetcode/tree/master/1559-cherry-pickup-ii) |
 | [3460-count-the-number-of-inversions](https://github.com/vishu9897/Leetcode/tree/master/3460-count-the-number-of-inversions) |
 | [3490-find-the-maximum-length-of-valid-subsequence-i](https://github.com/vishu9897/Leetcode/tree/master/3490-find-the-maximum-length-of-valid-subsequence-i) |
+| [3491-find-the-maximum-length-of-valid-subsequence-ii](https://github.com/vishu9897/Leetcode/tree/master/3491-find-the-maximum-length-of-valid-subsequence-ii) |
 ## Matrix
 |  |
 | ------- |
