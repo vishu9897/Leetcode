@@ -14,7 +14,8 @@ public:
             for(int i=0;i<n;i++)
             {
                 int prev= (j - nums[i]+div)%div;
-                dp[nums[i]]=max(dp[nums[i]],1+dp[prev]);
+                // dp[nums[i]]=max(dp[nums[i]],1+dp[prev]);
+                dp[nums[i]]=1+dp[prev];
                 res=max(res,dp[nums[i]]);
             }
             for(int i=0;i<dp.size();i++) dp[i]=0;
