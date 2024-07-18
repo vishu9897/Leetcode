@@ -1,45 +1,42 @@
 class Solution {
 public:
-    void Dfs(vector<vector<int>>& grid, vector<vector<int>> &visited,int drow[],int dcol[],int sr,int sc,int n,int m)
-    {
-        visited[sr][sc]=1;
-        for(int i=0;i<4;i++)
+    int rw[4]={-1,0,0,1};
+    int cl[4]={0,-1,1,0};
+    void solve(int row,int col,vector<vector<int>> &grid)
+    {   
+        grid[row][col]=0;
+        int n=grid.size(),m=grid[0].size();
+        for(int k=0;k<4;k++)
         {
-            int row= sr + drow[i];
-            int col= sc + dcol[i];
-
-            if(row>=0 && row<n && col>=0 && col<m && visited[row][col]==0 && grid[row][col]==1)
+            int r= row + rw[k];
+            int c= col + cl[k];
+            if(r>=0 && r<n && c>=0 && c<m && grid[r][c]==1)
             {
-                Dfs(grid,visited,drow,dcol,row,col,n,m);
+                solve(r,c,grid);
             }
         }
     }
     int numEnclaves(vector<vector<int>>& grid) {
-        
         int n=grid.size();
         int m=grid[0].size();
-        vector<vector<int>> visited(n,vector<int>(m,0));
-        int res=0;
-
-        int drow[]={-1,0,0,1};
-        int dcol[]={0,-1,1,0};
 
         for(int i=0;i<n;i++)
         {
             for(int j=0;j<m;j++)
             {
-                if((i==0 || i==n-1 || j==0 || j==m-1) && visited[i][j]==0 && grid[i][j]==1)
+                if(i==0 || j==0 || i==n-1 || j==m-1)
                 {
-                    Dfs(grid,visited,drow,dcol,i,j,n,m);
+                    if(grid[i][j]==1) solve(i,j,grid);
                 }
             }
         }
+        int res=0;
 
         for(int i=0;i<n;i++)
         {
             for(int j=0;j<m;j++)
             {
-                if(visited[i][j]==0 && grid[i][j]==1) res++;
+                if(grid[i][j]==1) res++;
             }
         }
 
