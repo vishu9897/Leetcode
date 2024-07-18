@@ -1,44 +1,71 @@
 class Solution {
 public:
-    void DFS(vector<vector<char>>&board,vector<vector<int>>& visited,int m,int n,int rw,int cl,int drow[],int dcol[])
+    int cl[4]={0,-1,1,0};
+    int rw[4]={-1,0,0,1};
+    void solve(vector<vector<char>> &board,int row,int col,vector<vector<char>> &ans,vector<vector<int>> &vis)
     {
-        visited[rw][cl]=1;
+        int n=board.size();
+        int m=board[0].size();
 
-        for(int i=0;i<4;i++)
+        ans[row][col]='O';
+
+        vis[row][col]=1;
+
+        for(int k=0;k<4;k++)
         {
-            int row= rw + drow[i];
-            int col= cl + dcol[i];   
-            if(row>=0 && col>=0 && row<n && col<m && board[row][col]=='O' && visited[row][col]==0)
+            int r = row + rw[k];
+            int c = col + cl[k];
+
+            if(r>=0 && r < n && c>=0 && c < m && board[r][c]=='O' && vis[r][c]==0)
             {
-                DFS(board,visited,m,n,row,col,drow,dcol);
+                solve(board,r,c,ans,vis);
             }
         }
-        
-
     }
     void solve(vector<vector<char>>& board) {
         int n=board.size();
         int m=board[0].size();
-        vector<vector<int>> visited(n,vector<int>(m,0));
-        int drow[]= {-1,0,0,1};
-        int dcol[]= {0,-1,1,0};
 
-        for(int i=0;i<n;i++){
-            for(int j=0;j<m;j++)
-            {
-                if((i==0 || j==0 || i==n-1 || j==m-1) && board[i][j]=='O' && visited[i][j]==0)
-                {
-                    DFS(board,visited,m,n,i,j,drow,dcol);
-                }
+        vector<vector<char>> ans(n,vector<char>(m,'X'));
+        // vector<vector<int>> vis(n,vector<int>(m,0));
 
+        for(int i=0;i<n;i++)
+        {
+            vector<vector<int>> vis(n,vector<int>(m,0));
+            if(board[i][0]=='O'){
+                solve(board,i,0,ans,vis);
+            } 
+        }
+        for(int i=0;i<n;i++)
+        {
+            vector<vector<int>> vis(n,vector<int>(m,0));
+            if(board[i][m-1]=='O'){
+                solve(board,i,m-1,ans,vis);
+            }   
+        }
+        for(int j=0;j<m;j++)
+        {
+            vector<vector<int>> vis(n,vector<int>(m,0));
+            if(board[0][j]=='O'){
+                solve(board,0,j,ans,vis);
             }
         }
+        for(int j=0;j<m;j++)
+        {
+            vector<vector<int>> vis(n,vector<int>(m,0));
+            if(board[n-1][j]=='O'){
+                solve(board,n-1,j,ans,vis);
+            } 
+        }
+
         for(int i=0;i<n;i++)
         {
             for(int j=0;j<m;j++)
             {
-                board[i][j]= visited[i][j]==1 ? 'O' : 'X';
+                board[i][j]=ans[i][j];
             }
         }
+
     }
+
 };
