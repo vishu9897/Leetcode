@@ -22,7 +22,25 @@ public:
        
         cuts.push_back(n);
         int s=cuts.size();
-        vector<vector<int>> dp(s,vector<int>(s,-1));
-        return solve(cuts,0,s-1,dp);
+        vector<vector<int>> dp(s,vector<int>(s,0));
+        
+        for(int i=s-1;i>=0;i--){
+            for(int j=0;j<s;j++)
+            {
+                int mini=INT_MAX;
+                 if(i+1==j || i>=j) continue;
+                for(int k=i+1;k<j;k++)
+                {
+                    // cout<<l<<" "<<k<<" "<<r<<endl;
+                    int cases = (cuts[j]-cuts[i]) + dp[i][k] + dp[k][j];
+                    // cout<<"cases "<<cases<<endl;
+                    mini=min(cases,mini);
+                }
+                dp[i][j]=mini;   
+            }
+        }
+
+        
+        return dp[0][s-1];
     }
 };
