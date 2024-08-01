@@ -1,22 +1,28 @@
 class Solution {
 public:
-    int solve(vector<int> &cuts,int i,int j,vector<vector<int>> &dp)
+    int solve(vector<int> &cuts,int l,int r,vector<vector<int>> &dp)
     {
-        if(i>=j) return 0;
-        if(dp[i][j]!=-1) return dp[i][j];
-        int mini=INT_MAX;
-        for(int k=i;k<j;k++)
+        int  mini=INT_MAX;
+        if(dp[l][r]!=-1) return dp[l][r];
+        if(l+1==r || l>=r) return 0;
+        for(int k=l+1;k<r;k++)
         {
-            int cases= cuts[j]-cuts[i-1] + solve(cuts,i,k,dp) + solve(cuts,k+1,j,dp);
+            // cout<<l<<" "<<k<<" "<<r<<endl;
+            int cases = (cuts[r]-cuts[l]) + solve(cuts,l,k,dp) + solve(cuts,k,r,dp);
+            // cout<<"cases "<<cases<<endl;
             mini=min(cases,mini);
         }
-        return dp[i][j]=mini;
+        
+        return dp[l][r]=mini;
     }
     int minCost(int n, vector<int>& cuts) {
+        
         sort(cuts.begin(),cuts.end());
-        cuts.push_back(n);
         cuts.insert(cuts.begin(),0);
-        vector<vector<int>> dp(cuts.size(),vector<int>(cuts.size(),-1));
-        return solve(cuts,1,cuts.size()-1,dp);
+       
+        cuts.push_back(n);
+        int s=cuts.size();
+        vector<vector<int>> dp(s,vector<int>(s,-1));
+        return solve(cuts,0,s-1,dp);
     }
 };
