@@ -7,10 +7,10 @@ public:
         {
             int mid1= (low +high) >> 1;
             int mid2= (n1+n2+1)/2- mid1;
-            int l1= mid1-1==-1 ? INT_MIN : nums1[mid1-1];
-            int l2= mid2-1==-1 ? INT_MIN : nums2[mid2-1];
+            int l1= mid1-1<0 ? INT_MIN : nums1[mid1-1];
+            int l2= mid2-1<0 ? INT_MIN : nums2[mid2-1];
             int r1= mid1==n1 ? INT_MAX : nums1[mid1];
-            int r2= mid2==n2 ? INT_MAX : nums2[mid2]; 
+            int r2= mid2==n2 ? INT_MAX : nums2[mid2];
             if(l1<=r2 && l2<=r1){
                 if(even)
                 {
