@@ -1,76 +1,79 @@
-struct DLL{
+struct Node{
+    Node *next;
+    Node *prev;
     int key;
     int val;
-    DLL* next;
-    DLL* prev;
-    DLL(int k,int v)
-    {
+    Node(int k,int value)
+    {   
+        // this->next=NULL;
+        // this->prev=NULL;
         key=k;
-        val=v;
+        val=value;
     }
 };
 class LRUCache {
 public:
+    unordered_map<int,Node*> mp;
     int cap=0;
-    unordered_map<int,DLL*> mp;
-    DLL* head;
-    DLL* tail;
+    Node* head;
+    Node* tail;
     LRUCache(int capacity) {
-        head= new DLL(-1,-1);
-        tail= new DLL(-1,-1);
+        head= new Node(-1,-1);
+        tail= new Node(-1,-1);
         head->next=tail;
         tail->prev=head;
         cap=capacity;
     }
-    void addNode(DLL *node)
+    
+
+    void deleteNode(Node* node)
     {
-        DLL* tempNode=head->next;
-        node->next=tempNode;
-        node->prev=head;
-        head->next=node;
-        tempNode->prev=node;
-    }
-    void deleteNode(DLL *node)
-    {
-        DLL* prevNode=node->prev;
-        DLL* nextNode=node->next;
+        Node* prevNode=node->prev;
+        Node* nextNode=node->next;
         prevNode->next=nextNode;
         nextNode->prev=prevNode;
     }
+
+    void addNode(Node* node)
+    {
+        Node* tempNode= head->next;
+        node->next=tempNode;
+        node->prev=head;
+        
+        head->next=node;
+        tempNode->prev=node;
+
+    }
+
     int get(int key) {
         if(mp.find(key)==mp.end()) return -1;
-        DLL* node=mp[key];
+        Node* node= mp[key];
         mp.erase(key);
-        int ans= node->val;
+        int ans=node->val;
         deleteNode(node);
         addNode(node);
-            
-        
+
         mp[key]=node;
         return ans;
     }
     
     void put(int key, int value) {
-        DLL* newNode= new DLL(key,value);
+        Node* newNode= new Node(key,value);
         if(mp.find(key)!=mp.end())
         {
-            DLL* node= mp[key];
-            
+            Node* node= mp[key];
             deleteNode(node);
             mp.erase(key);
-
         }
-        if(cap<=mp.size()) {
-            DLL* temp=tail->prev;
+        if(cap <= mp.size())
+        {
+            Node* temp=tail->prev;
             deleteNode(tail->prev);
             mp.erase(temp->key);
-            // free(temp);
         }
-        
         addNode(newNode);
         mp[key]=newNode;
     }
-    
 };
 
 /**
