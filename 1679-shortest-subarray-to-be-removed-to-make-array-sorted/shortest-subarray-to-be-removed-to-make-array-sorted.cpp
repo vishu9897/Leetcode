@@ -1,8 +1,3 @@
-// OJ: https://leetcode.com/problems/shortest-subarray-to-be-removed-to-make-array-sorted/
-// Author: github.com/lzl124631x
-// Time: O(N)
-// Space: O(1)
-// Ref: https://leetcode.com/problems/shortest-subarray-to-be-removed-to-make-array-sorted/discuss/830416/Java-Increasing-From-Left-Right-and-Merge-O(n)
 class Solution {
 public:
     int findLengthOfShortestSubarray(vector<int>& A) {
